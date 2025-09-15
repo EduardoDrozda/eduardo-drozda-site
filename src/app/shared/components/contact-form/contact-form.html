@@ -1,0 +1,80 @@
+<div class="contact-form-container" [class.dark-theme]="isDarkMode">
+  <div class="form-header">
+    <h2>Fale comigo</h2>
+    <p>Será um prazer te conhecer</p>
+  </div>
+
+  <div class="form-content" *ngIf="!isSubmitted; else successMessage">
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          [(ngModel)]="formData.name"
+          required
+          placeholder="Seu nome completo"
+          [disabled]="isSubmitting"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="formData.email"
+          required
+          placeholder="seu@email.com"
+          [disabled]="isSubmitting"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mensagem</label>
+        <textarea
+          id="message"
+          name="message"
+          [(ngModel)]="formData.message"
+          required
+          placeholder="Conte-me sobre seu projeto ou como posso ajudar..."
+          rows="5"
+          [disabled]="isSubmitting"
+        ></textarea>
+      </div>
+
+      <div class="form-error" *ngIf="errorMessage">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>{{ errorMessage }}</span>
+      </div>
+
+      <button
+        type="submit"
+        class="submit-btn"
+        [disabled]="isSubmitting || !contactForm.form.valid"
+        [class.loading]="isSubmitting"
+      >
+        <span *ngIf="!isSubmitting">Enviar</span>
+        <span *ngIf="isSubmitting">
+          <i class="fas fa-spinner fa-spin"></i>
+          Enviando...
+        </span>
+      </button>
+    </form>
+  </div>
+
+  <ng-template #successMessage>
+    <div class="success-message">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h3>Mensagem enviada com sucesso!</h3>
+      <p>Obrigado pelo contato. Retornarei em breve!</p>
+      <button class="reset-btn" (click)="resetForm()">
+        Enviar nova mensagem
+      </button>
+    </div>
+  </ng-template>
+</div>

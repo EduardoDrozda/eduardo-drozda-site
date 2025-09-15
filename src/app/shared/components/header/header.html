@@ -1,0 +1,103 @@
+<header class="header" role="banner" aria-label="Navegação principal">
+  <nav class="header__nav" role="navigation" aria-label="Menu principal">
+
+    <!-- Logo/Brand -->
+    <div class="header__brand">
+      <div class="header__logo-ball" (click)="navigateToSection(sections.HERO)">
+        <span class="header__logo-text">ED</span>
+        <span class="header__logo-full">EDUARDO DROZDA</span>
+      </div>
+    </div>
+
+    <div class="header__menu">
+      <a href="#hero"
+         (click)="navigateToSection(sections.HERO, $event)"
+         class="header__link"
+        [class.header__link--active]="isActive(sections.HERO)"
+         role="menuitem"
+         aria-label="Ir para seção inicial">
+        <span class="header__arrow">&gt;</span> Início
+      </a>
+      <a href="#about"
+         (click)="navigateToSection(sections.ABOUT, $event)"
+         class="header__link"
+         [class.header__link--active]="isActive(sections.ABOUT)"
+         role="menuitem"
+         aria-label="Ir para seção sobre mim">
+        <span class="header__arrow">&gt;</span> Sobre
+      </a>
+      <a href="#skills"
+         (click)="navigateToSection(sections.SKILLS, $event)"
+         class="header__link"
+         [class.header__link--active]="isActive(sections.SKILLS)"
+         role="menuitem"
+         aria-label="Ir para seção de habilidades">
+        <span class="header__arrow">&gt;</span> Skills
+      </a>
+      <a href="#contact"
+         (click)="navigateToSection(sections.CONTACT, $event)"
+         class="header__link"
+         [class.header__link--active]="isActive(sections.CONTACT)"
+         role="menuitem"
+         aria-label="Ir para seção de contato">
+        <span class="header__arrow">&gt;</span> Contato
+      </a>
+    </div>
+
+    <!-- Menu Mobile Toggle -->
+    <button (click)="toggleMenu()"
+            class="header__mobile-toggle"
+            role="button"
+            [attr.aria-label]="isMenuOpen ? 'Fechar menu' : 'Abrir menu'"
+            [attr.aria-expanded]="isMenuOpen">
+      <div class="hamburger" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </nav>
+
+  <!-- Menu Mobile -->
+  <div class="header__mobile-menu"
+       [class.header__mobile-menu--hidden]="!isMenuOpen"
+       [class.header__mobile-menu--visible]="isMenuOpen"
+       role="menu"
+       [attr.aria-hidden]="!isMenuOpen">
+
+    <div class="header__mobile-links">
+      <a href="#hero"
+         (click)="navigateToSection(sections.HERO, $event)"
+         class="header__mobile-link"
+         [class.header__mobile-link--active]="isActive(sections.HERO)"
+         role="menuitem"
+         aria-label="Ir para seção inicial">
+        <span class="header__arrow">&gt;</span> Início
+      </a>
+      <a href="#about"
+         (click)="navigateToSection(sections.ABOUT, $event)"
+         class="header__mobile-link"
+         [class.header__mobile-link--active]="isActive(sections.ABOUT)"
+         role="menuitem"
+         aria-label="Ir para seção sobre mim">
+        <span class="header__arrow">&gt;</span> Sobre
+      </a>
+      <a href="#skills"
+         (click)="navigateToSection(sections.SKILLS, $event)"
+         class="header__mobile-link"
+         [class.header__mobile-link--active]="isActive(sections.SKILLS)"
+         role="menuitem"
+         aria-label="Ir para seção de habilidades">
+        <span class="header__arrow">&gt;</span> Skills
+      </a>
+      <a href="#contact"
+         (click)="navigateToSection(sections.CONTACT, $event)"
+         class="header__mobile-link"
+         [class.header__mobile-link--active]="isActive(sections.CONTACT)"
+         role="menuitem"
+         aria-label="Ir para seção de contato">
+        <span class="header__arrow">&gt;</span> Contato
+      </a>
+    </div>
+  </div>
+</header>

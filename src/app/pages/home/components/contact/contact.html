@@ -1,0 +1,238 @@
+<section
+  id="contact"
+  class="contact"
+  role="region"
+  aria-label="Seção de contato"
+>
+  <div class="contact__container">
+
+    <!-- Cabeçalho da Seção -->
+    <header class="contact__header">
+      <h2 class="contact__title glitch"
+          data-text="Vamos conversar?"
+          role="heading"
+          aria-level="2">
+        Vamos conversar?
+      </h2>
+      <div class="contact__divider animate-neon-pulse"
+           aria-hidden="true"></div>
+    </header>
+
+    <div class="contact__content">
+
+      <!-- Informações de Contato -->
+      <div class="contact__info">
+
+        <!-- Descrição -->
+        <div class="contact__card">
+          <div class="contact__card-header">
+            <span class="contact__prompt">~</span>
+            <span class="contact__filename">contact-info.txt</span>
+          </div>
+
+          <p class="contact__description">
+            Estou sempre aberto a novas oportunidades e projetos interessantes.
+            Se você tem uma ideia ou precisa de ajuda com desenvolvimento,
+            não hesite em entrar em contato!
+          </p>
+
+          <div class="contact__details">
+            <div class="contact__detail">
+              <i class="fas fa-envelope contact__detail-icon" aria-hidden="true"></i>
+              <span class="contact__detail-text">contato@eduardodrozda.com</span>
+            </div>
+            <div class="contact__detail">
+              <i class="fas fa-map-marker-alt contact__detail-icon" aria-hidden="true"></i>
+              <span class="contact__detail-text">São Paulo, Brasil</span>
+            </div>
+            <div class="contact__detail">
+              <i class="fas fa-clock contact__detail-icon" aria-hidden="true"></i>
+              <span class="contact__detail-text">Disponível para projetos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Links Sociais -->
+        <div class="contact__card">
+          <div class="contact__card-header">
+            <span class="contact__prompt">~</span>
+            <span class="contact__filename">social-links.json</span>
+          </div>
+
+          <div class="contact__social-grid">
+            <a href="https://github.com/eduardodrozda"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact__social-link"
+               role="button"
+               aria-label="Acessar perfil no GitHub">
+              <span class="contact__social-label">GitHub</span>
+            </a>
+
+            <a href="https://linkedin.com/in/eduardodrozda"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact__social-link"
+               role="button"
+               aria-label="Acessar perfil no LinkedIn">
+              <span class="contact__social-label">LinkedIn</span>
+            </a>
+
+            <a href="mailto:contato@eduardodrozda.com"
+               class="contact__social-link"
+               role="button"
+               aria-label="Enviar email">
+              <span class="contact__social-label">Email</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="contact__card">
+          <div class="contact__card-header">
+            <span class="contact__prompt">~</span>
+            <span class="contact__filename">response-time.sh</span>
+          </div>
+
+          <div class="contact__stats">
+            <div class="contact__stat">
+              <span class="contact__stat-label">Tempo de resposta:</span>
+              <span class="contact__stat-value">&lt; 24h</span>
+            </div>
+            <div class="contact__stat">
+              <span class="contact__stat-label">Disponibilidade:</span>
+              <span class="contact__stat-value contact__stat-value--online">Online</span>
+            </div>
+            <div class="contact__stat">
+              <span class="contact__stat-label">Idiomas:</span>
+              <span class="contact__stat-value contact__stat-value--languages">PT, EN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário de Contato -->
+      <div class="contact__form-container">
+        <div class="contact__card">
+          <div class="contact__card-header">
+            <span class="contact__prompt">~</span>
+            <span class="contact__filename">contact-form.js</span>
+          </div>
+
+          <!-- Sucesso -->
+          <div *ngIf="isSubmitted"
+               class="contact__success"
+               role="alert"
+               aria-label="Mensagem enviada com sucesso">
+            <div class="contact__success-content">
+              <i class="fas fa-check-circle contact__success-icon" aria-hidden="true"></i>
+              <div class="contact__success-text">
+                <h3 class="contact__success-title">Mensagem enviada!</h3>
+                <p class="contact__success-message">Obrigado pelo contato. Responderei em breve!</p>
+              </div>
+            </div>
+            <button (click)="resetForm()"
+                    class="contact__reset-button"
+                    role="button"
+                    aria-label="Enviar nova mensagem">
+              Enviar nova mensagem
+            </button>
+          </div>
+
+          <!-- Formulário -->
+          <form (ngSubmit)="onSubmit()"
+                *ngIf="!isSubmitted"
+                class="contact__form"
+                role="form"
+                aria-label="Formulário de contato">
+
+            <!-- Nome -->
+            <div class="contact__form-group">
+              <label for="name" class="contact__label">
+                <span class="contact__label-prompt">&gt;</span> Nome *
+              </label>
+              <input
+                type="text"
+                id="name"
+                [(ngModel)]="formData.name"
+                name="name"
+                required
+                class="contact__input"
+                placeholder="Seu nome completo"
+                aria-label="Campo de nome"
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="contact__form-group">
+              <label for="email" class="contact__label">
+                <span class="contact__label-prompt">&gt;</span> Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                [(ngModel)]="formData.email"
+                name="email"
+                required
+                class="contact__input"
+                placeholder="seu@email.com"
+                aria-label="Campo de email"
+              />
+            </div>
+
+            <!-- Mensagem -->
+            <div class="contact__form-group">
+              <label for="message" class="contact__label">
+                <span class="contact__label-prompt">&gt;</span> Mensagem *
+              </label>
+              <textarea
+                id="message"
+                [(ngModel)]="formData.message"
+                name="message"
+                required
+                rows="6"
+                class="contact__textarea"
+                placeholder="Conte-me sobre seu projeto ou ideia..."
+                aria-label="Campo de mensagem"
+              ></textarea>
+            </div>
+
+            <!-- Erro -->
+            <div *ngIf="errorMessage"
+                 class="contact__error"
+                 role="alert"
+                 aria-label="Mensagem de erro">
+              <div class="contact__error-content">
+                <i class="fas fa-exclamation-triangle contact__error-icon" aria-hidden="true"></i>
+                <span class="contact__error-text">{{ errorMessage }}</span>
+              </div>
+            </div>
+
+            <!-- Botão Submit -->
+            <button
+              type="submit"
+              [disabled]="isSubmitting"
+              class="contact__submit"
+              role="button"
+              [attr.aria-label]="isSubmitting ? 'Enviando mensagem...' : 'Enviar mensagem'"
+            >
+              <i *ngIf="isSubmitting" class="fas fa-spinner fa-spin contact__submit-icon" aria-hidden="true"></i>
+              <i *ngIf="!isSubmitting" class="fas fa-paper-plane contact__submit-icon" aria-hidden="true"></i>
+              <span class="contact__submit-text">{{ isSubmitting ? 'Enviando...' : 'Enviar Mensagem' }}</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terminal prompt decorativo -->
+  <div class="contact__terminal-prompt"
+       role="complementary"
+       aria-label="Terminal prompt decorativo">
+    <div class="contact__terminal-content">
+      <span class="contact__terminal-user">eduardo@contact:~$</span>
+      <span class="terminal-cursor"></span>
+    </div>
+  </div>
+</section>

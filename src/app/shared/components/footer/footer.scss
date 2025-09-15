@@ -1,0 +1,81 @@
+// Footer Component Styles
+.footer {
+  background-color: var(--matrix-darker);
+  border-top: 1px solid var(--matrix-green);
+  padding: 3rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__info {
+    text-align: center;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--matrix-green);
+    font-family: var(--font-mono);
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-size: 1rem;
+    color: var(--cyber-blue);
+    font-family: var(--font-mono);
+    margin-bottom: 0.25rem;
+  }
+
+  &__specialty {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  &__bottom {
+    border-top: 1px solid var(--matrix-green);
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  &__copyright {
+    color: var(--cyber-blue);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin: 0;
+  }
+
+  // Efeito de brilho decorativo
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--matrix-green), transparent);
+    animation: footerGlow 3s infinite;
+  }
+}
+
+// Animação para o brilho do footer
+@keyframes footerGlow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

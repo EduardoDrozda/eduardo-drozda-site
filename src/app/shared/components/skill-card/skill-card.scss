@@ -1,0 +1,139 @@
+.skill-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  &.dark-theme {
+    background: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.skill-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+}
+
+.skill-content {
+  text-align: center;
+}
+
+.skill-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 1rem 0;
+  transition: color 0.3s ease;
+
+  .dark-theme & {
+    color: #fff;
+  }
+}
+
+.skill-description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+  transition: color 0.3s ease;
+
+  .dark-theme & {
+    color: #ccc;
+  }
+}
+
+.skill-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-section {
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 0.75rem 0;
+    text-align: left;
+    transition: color 0.3s ease;
+
+    .dark-theme & {
+      color: #fff;
+    }
+  }
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.skill-tag {
+  background: #f8f9fa;
+  color: #495057;
+  padding: 0.375rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #007bff;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .dark-theme & {
+    background: #3a3a3a;
+    color: #ccc;
+    border-color: rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      background: #4dabf7;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-card {
+    padding: 1.5rem;
+  }
+
+  .skill-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skill-title {
+    font-size: 1.25rem;
+  }
+
+  .skill-description {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,69 @@
+// ========================================
+// COLOR SYSTEM - NERD THEME
+// ========================================
+
+:root {
+  // Core Theme Colors
+  --matrix-green: #00ff41;
+  --matrix-darker: #000000;
+  --matrix-dark: #001100;
+  --matrix: #003300;
+  --cyber-blue: #00ffff;
+  --code-bg: #0a0a0a;
+  --terminal-bg: #000000;
+
+  // Text Colors
+  --text-primary: var(--matrix-green);
+  --text-secondary: var(--cyber-blue);
+  --text-muted: #666666;
+
+  // Background Colors
+  --bg-primary: var(--matrix-darker);
+  --bg-secondary: var(--matrix-dark);
+  --bg-code: var(--code-bg);
+
+  // Border Colors
+  --border-primary: var(--matrix-green);
+  --border-secondary: var(--cyber-blue);
+
+  // Shadow Colors
+  --shadow-matrix: 0 0 20px rgba(0, 255, 65, 0.3);
+  --shadow-cyber: 0 0 20px rgba(0, 255, 255, 0.3);
+
+  // Status Colors
+  --success: var(--matrix-green);
+  --warning: #ffaa00;
+  --error: #ff4444;
+  --info: var(--cyber-blue);
+
+  // Additional Theme Colors
+  --syntax-yellow: #ffaa00;
+  --neon-pink: #ff00ff;
+  --terminal-green: var(--matrix-green);
+}
+
+// Color Utility Classes
+.text-matrix { color: var(--matrix-green) !important; }
+.text-cyber { color: var(--cyber-blue) !important; }
+.text-muted { color: var(--text-muted) !important; }
+.text-syntax-yellow { color: var(--syntax-yellow) !important; }
+.text-neon-pink { color: var(--neon-pink) !important; }
+.text-terminal-green { color: var(--terminal-green) !important; }
+
+.bg-matrix { background-color: var(--matrix-green) !important; }
+.bg-matrix-darker { background-color: var(--matrix-darker) !important; }
+.bg-matrix-dark { background-color: var(--matrix-dark) !important; }
+.bg-code { background-color: var(--code-bg) !important; }
+.bg-neon-pink { background-color: var(--neon-pink) !important; }
+.bg-terminal-green { background-color: var(--terminal-green) !important; }
+
+.border-matrix { border-color: var(--matrix-green) !important; }
+.border-cyber { border-color: var(--cyber-blue) !important; }
+
+.shadow-matrix { box-shadow: var(--shadow-matrix) !important; }
+.shadow-cyber { box-shadow: var(--shadow-cyber) !important; }
+
+// Gradient Classes
+.bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-stops)) !important; }
+.from-code { --tw-gradient-from: var(--code-bg) !important; --tw-gradient-to: rgba(10, 10, 10, 0) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
+.to-matrix-darker { --tw-gradient-to: var(--matrix-darker) !important; }

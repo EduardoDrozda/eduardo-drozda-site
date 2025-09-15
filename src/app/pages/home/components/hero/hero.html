@@ -1,0 +1,67 @@
+<section id="hero" class="hero" role="banner" aria-label="Seção principal - Apresentação">
+  <div class="hero__background">
+    <div class="hero__matrix-rain">
+      @for (i of
+      [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100];
+      track i) {
+      <div class="hero__rain-item" [style.left.%]="i * 1" [style.animation-delay.s]="i * 0.05"
+        [style.animation-duration.s]="2 + (i % 4)">
+        {{ getMatrixText(i) }}
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="hero__container">
+    <div class="hero__content">
+      <!-- Saudação -->
+      <div class="hero__greeting" role="text" aria-label="Saudação">
+        &gt; Olá, eu sou Eduardo Drozda
+      </div>
+
+      <!-- Título Principal -->
+      <h1 class="hero__title">
+        <span role="heading" aria-level="1" aria-label="Engenheiro de Software">
+          {{ displayedText() }}<span class="terminal-cursor" [class.blinking]="isTyping"></span>
+        </span>
+      </h1>
+
+      <!-- Subtítulo -->
+      <h2 class="hero__subtitle" role="heading" aria-level="2">
+        HÁ NOVE ANOS CONSTRUINDO SOLUÇÕES
+      </h2>
+
+      <!-- Botões de Ação -->
+      <nav class="hero__actions" role="navigation" aria-label="Links de ação">
+        <a href="https://github.com/eduardodrozda" target="_blank" rel="noopener noreferrer" class="hero__button"
+          role="button" aria-label="Acessar perfil no GitHub">
+          <img src="images/github.png" alt="GitHub" class="hero__icon" />
+          <span>GitHub</span>
+          <span class="hero__external-icon" aria-hidden="true">↗</span>
+        </a>
+
+        <a href="https://linkedin.com/in/eduardodrozda" target="_blank" rel="noopener noreferrer" class="hero__button"
+          role="button" aria-label="Acessar perfil no LinkedIn">
+          <img src="images/linkedin.png" alt="LinkedIn" class="hero__icon" />
+          <span>LinkedIn</span>
+          <span class="hero__external-icon" aria-hidden="true">↗</span>
+        </a>
+
+        <button (click)="downloadCV()" class="hero__button" role="button" aria-label="Baixar currículo em PDF">
+          <img src="images/file.png" alt="Download" class="hero__icon" />
+          <span>Download CV</span>
+        </button>
+      </nav>
+
+    </div>
+  </div>
+
+  <!-- Indicador de Scroll -->
+  <div class="hero__scroll">
+    <button (click)="scrollToSection('about')" class="hero__scroll-text" role="button"
+      aria-label="Rolar para próxima seção">
+      <span>SCROLL DOWN</span>
+      <span class="hero__scroll-icon" aria-hidden="true">↓</span>
+    </button>
+  </div>
+</section>

@@ -1,0 +1,83 @@
+// ========================================
+// FONT SIZES SYSTEM
+// ========================================
+
+:root {
+  // Font Families
+  --font-mono: 'JetBrains Mono', 'Source Code Pro', 'Courier New', monospace;
+  --font-sans: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+
+  // Font Sizes - Mobile First
+  --text-xs: 0.75rem;    // 12px
+  --text-sm: 0.875rem;   // 14px
+  --text-base: 1rem;     // 16px
+  --text-lg: 1.125rem;   // 18px
+  --text-xl: 1.25rem;    // 20px
+  --text-2xl: 1.5rem;    // 24px
+  --text-3xl: 1.875rem;  // 30px
+  --text-4xl: 2.25rem;   // 36px
+  --text-5xl: 3rem;      // 48px
+  --text-6xl: 3.75rem;   // 60px
+  --text-7xl: 4.5rem;    // 72px
+  --text-8xl: 6rem;      // 96px
+
+  // Line Heights
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+  // Font Weights
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+}
+
+// Font Size Utility Classes
+.text-xs { font-size: var(--text-xs) !important; }
+.text-sm { font-size: var(--text-sm) !important; }
+.text-base { font-size: var(--text-base) !important; }
+.text-lg { font-size: var(--text-lg) !important; }
+.text-xl { font-size: var(--text-xl) !important; }
+.text-2xl { font-size: var(--text-2xl) !important; }
+.text-3xl { font-size: var(--text-3xl) !important; }
+.text-4xl { font-size: var(--text-4xl) !important; }
+.text-5xl { font-size: var(--text-5xl) !important; }
+.text-6xl { font-size: var(--text-6xl) !important; }
+.text-7xl { font-size: var(--text-7xl) !important; }
+.text-8xl { font-size: var(--text-8xl) !important; }
+
+// Font Family Classes
+.font-mono { font-family: var(--font-mono) !important; }
+.font-sans { font-family: var(--font-sans) !important; }
+
+// Font Weight Classes
+.font-light { font-weight: var(--font-light) !important; }
+.font-normal { font-weight: var(--font-normal) !important; }
+.font-medium { font-weight: var(--font-medium) !important; }
+.font-semibold { font-weight: var(--font-semibold) !important; }
+.font-bold { font-weight: var(--font-bold) !important; }
+.font-extrabold { font-weight: var(--font-extrabold) !important; }
+
+// Line Height Classes
+.leading-tight { line-height: var(--leading-tight) !important; }
+.leading-normal { line-height: var(--leading-normal) !important; }
+.leading-relaxed { line-height: var(--leading-relaxed) !important; }
+
+// Responsive Font Sizes
+@media (min-width: 768px) {
+  .md\:text-4xl { font-size: var(--text-4xl) !important; }
+  .md\:text-5xl { font-size: var(--text-5xl) !important; }
+  .md\:text-6xl { font-size: var(--text-6xl) !important; }
+  .md\:text-7xl { font-size: var(--text-7xl) !important; }
+  .md\:text-8xl { font-size: var(--text-8xl) !important; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-5xl { font-size: var(--text-5xl) !important; }
+  .lg\:text-6xl { font-size: var(--text-6xl) !important; }
+  .lg\:text-7xl { font-size: var(--text-7xl) !important; }
+  .lg\:text-8xl { font-size: var(--text-8xl) !important; }
+}

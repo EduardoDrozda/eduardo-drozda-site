@@ -1,0 +1,77 @@
+<section
+  id="about"
+  class="about"
+  role="region"
+  aria-label="Seção sobre Eduardo Drozda"
+>
+  <div class="about__container">
+    <!-- Cabeçalho da Seção -->
+    <header class="about__header">
+      <h2 class="about__title" role="heading" aria-level="2">
+        É um prazer te conhecer
+      </h2>
+      <div class="about__divider" aria-hidden="true"></div>
+    </header>
+
+    <div class="about__content" *ngIf="personalInfo">
+      <!-- Conteúdo Textual -->
+      <article class="about__text">
+        <!-- Descrição Principal -->
+        <div class="about__description">
+          <div class="about__description-content"
+               [innerHTML]="personalInfo.description | nl2br"
+               role="text"
+               aria-label="Descrição profissional de Eduardo Drozda">
+          </div>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="about__stats">
+          <div class="about__stat">
+            <div class="about__stat-number">9+</div>
+            <div class="about__stat-label">Anos de Experiência</div>
+          </div>
+          <div class="about__stat">
+            <div class="about__stat-number">∞</div>
+            <div class="about__stat-label">Linhas de Código</div>
+          </div>
+        </div>
+
+        <!-- Quote -->
+        <blockquote class="about__quote">
+          <p class="about__quote-text"
+             role="text"
+             aria-label="Citação inspiradora">
+            {{ personalInfo.quote }}
+          </p>
+          <footer class="about__quote-author">
+            <cite>— Dan Tocchini</cite>
+          </footer>
+        </blockquote>
+      </article>
+
+      <!-- Imagem do Eduardo -->
+      <div class="about__image-container">
+        <img
+          src="images/me.jpeg"
+          [alt]="personalInfo.name + ' - Engenheiro de Software'"
+          class="about__image"
+          loading="lazy"
+        />
+
+        <!-- Código Criativo da Carreira -->
+        <div class="about__code-snippet">
+          <pre class="about__code-text"><code>const softwareEngineer = {{ '{' }}
+  name: "Eduardo Drozda",
+  experience: "9+ anos",
+  specialization: "Full Stack",
+  passion: "Transformar café em código",
+  mission: "Criar ideias que agregam valor",
+  coffeeConsumption: "∞ xícaras/dia",
+  bugsFixed: "Incontáveis"
+{{ '}' }};</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
