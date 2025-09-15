@@ -14,7 +14,7 @@ export class DataService {
       name: 'Eduardo Drozda',
       title: 'ENGENHEIRO DE SOFTWARE',
       experience: 'HÁ SETE ANOS CONSTRUINDO SOLUÇÕES',
-      description: `Sou Eduardo, engenheiro de software com mais de oito anos de experiência em desenvolvimento full-stack, dedicado à criação de soluções escaláveis ​e impactantes. Minha trajetória profissional abrange diversos setores, incluindo finanças, saúde, e-commerce e pagamentos digitais, onde desenvolvi plataformas que atendem milhões de usuários.
+      description: `Sou Eduardo, engenheiro de software com um pouco mais de nove anos de experiência em desenvolvimento full-stack, dedicado à criação de soluções escaláveis ​e impactantes. Minha trajetória profissional abrange diversos setores, incluindo finanças, saúde, e-commerce e pagamentos digitais, onde desenvolvi plataformas que atendem milhões de usuários.
 
 Minha expertise é particularmente forte em tecnologias front-end, como Angular, TypeScript, NgRx e RxJS, e em todo esse ecossistema, complementada por sólidas habilidades de back-end em Node.js (incluindo NestJS e Express) e .NET. Tenho experiência em projetar microsserviços, implementar sistemas em tempo real e integrar tecnologias como Kafka e Redis para aprimorar o desempenho e a confiabilidade. Também me dedico a manter a alta qualidade e a automação do código, utilizando ferramentas como Jest, Cypress e Behat.
 

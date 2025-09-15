@@ -26,6 +26,14 @@
          aria-label="Ir para seção sobre mim">
         <span class="header__arrow">&gt;</span> Sobre
       </a>
+      <a href="#portfolio"
+         (click)="navigateToSection(sections.PORTFOLIO, $event)"
+         class="header__link"
+         [class.header__link--active]="isActive(sections.PORTFOLIO)"
+         role="menuitem"
+         aria-label="Ir para seção de portfólio">
+        <span class="header__arrow">&gt;</span> Portfólio
+      </a>
       <a href="#skills"
          (click)="navigateToSection(sections.SKILLS, $event)"
          class="header__link"
@@ -81,6 +89,14 @@
          role="menuitem"
          aria-label="Ir para seção sobre mim">
         <span class="header__arrow">&gt;</span> Sobre
+      </a>
+      <a href="#portfolio"
+         (click)="navigateToSection(sections.PORTFOLIO, $event)"
+         class="header__mobile-link"
+         [class.header__mobile-link--active]="isActive(sections.PORTFOLIO)"
+         role="menuitem"
+         aria-label="Ir para seção de portfólio">
+        <span class="header__arrow">&gt;</span> Portfólio
       </a>
       <a href="#skills"
          (click)="navigateToSection(sections.SKILLS, $event)"

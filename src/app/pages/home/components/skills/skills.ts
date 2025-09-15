@@ -26,10 +26,17 @@ export class Skills implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.setupIntersectionObserver();
+    // Only setup IntersectionObserver in browser
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      this.setupIntersectionObserver();
+    }
   }
 
   private setupIntersectionObserver(): void {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      return;
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

@@ -1,7 +1,7 @@
 export enum SectionEnum {
   HERO = 'hero',
   ABOUT = 'about',
-  EXPERIENCE = 'experience',
+  PORTFOLIO = 'portfolio',
   SKILLS = 'skills',
   CONTACT = 'contact'
 }

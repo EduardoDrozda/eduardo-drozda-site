@@ -27,14 +27,12 @@ export class App implements OnInit {
     // Initialize SEO
     this.initializeSEO();
 
-    // Initialize Google Analytics
-    this.googleAnalytics.initialize();
-
-    // Run SEO optimizations
-    SEOOptimizer.runAllOptimizations();
-
-    // Track page view
-    this.googleAnalytics.trackPageView(window.location.pathname);
+    // Initialize Google Analytics only in browser
+    if (typeof window !== 'undefined') {
+      this.googleAnalytics.initialize();
+      this.googleAnalytics.trackPageView(window.location.pathname);
+      SEOOptimizer.runAllOptimizations();
+    }
   }
 
   private initializeSEO(): void {
