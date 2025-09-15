@@ -1,0 +1,61 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Eduardo Drozda",
+  "jobTitle": "Engenheiro de Software Full Stack",
+  "description": "Desenvolvedor Full Stack especializado em Angular, React, Node.js, PHP e C#. Experiência em desenvolvimento web e mobile com foco em soluções escaláveis e inovadoras.",
+  "url": "https://eduardodrozda.com",
+  "image": "https://eduardodrozda.com/images/me.jpeg",
+  "sameAs": [
+    "https://github.com/eduardodrozda",
+    "https://linkedin.com/in/eduardodrozda"
+  ],
+  "email": "contato@eduardodrozda.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
+  },
+  "knowsAbout": [
+    "Angular",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "Nest.js",
+    "PHP",
+    "Laravel",
+    "C#",
+    ".NET",
+    "TypeScript",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "SASS",
+    "MySQL",
+    "PostgreSQL",
+    "Docker",
+    "React Native",
+    "Ionic"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Engenheiro de Software",
+    "description": "Desenvolvimento de aplicações web e mobile full stack",
+    "skills": [
+      "Desenvolvimento Frontend",
+      "Desenvolvimento Backend",
+      "Desenvolvimento Mobile",
+      "Arquitetura de Software",
+      "Clean Code",
+      "Design Patterns"
+    ]
+  },
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Universidade"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelancer"
+  }
+}
