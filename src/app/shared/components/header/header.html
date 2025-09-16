@@ -10,49 +10,49 @@
     </div>
 
     <div class="header__menu">
-      <a href="#hero"
-         (click)="navigateToSection(sections.HERO, $event)"
-         class="header__link"
-        [class.header__link--active]="isActive(sections.HERO)"
-         role="menuitem"
-         aria-label="Ir para seção inicial">
-        <span class="header__arrow">&gt;</span> Início
-      </a>
-      <a href="#about"
-         (click)="navigateToSection(sections.ABOUT, $event)"
-         class="header__link"
-         [class.header__link--active]="isActive(sections.ABOUT)"
-         role="menuitem"
-         aria-label="Ir para seção sobre mim">
-        <span class="header__arrow">&gt;</span> Sobre
-      </a>
-      <a href="#portfolio"
-         (click)="navigateToSection(sections.PORTFOLIO, $event)"
-         class="header__link"
-         [class.header__link--active]="isActive(sections.PORTFOLIO)"
-         role="menuitem"
-         aria-label="Ir para seção de portfólio">
-        <span class="header__arrow">&gt;</span> Portfólio
-      </a>
-      <a href="#skills"
-         (click)="navigateToSection(sections.SKILLS, $event)"
-         class="header__link"
-         [class.header__link--active]="isActive(sections.SKILLS)"
-         role="menuitem"
-         aria-label="Ir para seção de habilidades">
-        <span class="header__arrow">&gt;</span> Skills
-      </a>
-      <a href="#contact"
-         (click)="navigateToSection(sections.CONTACT, $event)"
-         class="header__link"
-         [class.header__link--active]="isActive(sections.CONTACT)"
-         role="menuitem"
-         aria-label="Ir para seção de contato">
-        <span class="header__arrow">&gt;</span> Contato
-      </a>
-    </div>
+          <a href="#hero"
+             (click)="navigateToSection(sections.HERO, $event)"
+             class="header__link"
+            [class.header__link--active]="isActive(sections.HERO)"
+             role="menuitem"
+             aria-label="Ir para seção inicial">
+            <span class="header__arrow">&gt;</span> {{ homeSignal() }}
+          </a>
+          <a href="#about"
+             (click)="navigateToSection(sections.ABOUT, $event)"
+             class="header__link"
+             [class.header__link--active]="isActive(sections.ABOUT)"
+             role="menuitem"
+             aria-label="Ir para seção sobre mim">
+            <span class="header__arrow">&gt;</span> {{ aboutSignal() }}
+          </a>
+          <a href="#portfolio"
+             (click)="navigateToSection(sections.PORTFOLIO, $event)"
+             class="header__link"
+             [class.header__link--active]="isActive(sections.PORTFOLIO)"
+             role="menuitem"
+             aria-label="Ir para seção de portfólio">
+            <span class="header__arrow">&gt;</span> {{ portfolioSignal() }}
+          </a>
+          <a href="#skills"
+             (click)="navigateToSection(sections.SKILLS, $event)"
+             class="header__link"
+             [class.header__link--active]="isActive(sections.SKILLS)"
+             role="menuitem"
+             aria-label="Ir para seção de habilidades">
+            <span class="header__arrow">&gt;</span> {{ skillsSignal() }}
+          </a>
+          <a href="#contact"
+             (click)="navigateToSection(sections.CONTACT, $event)"
+             class="header__link"
+             [class.header__link--active]="isActive(sections.CONTACT)"
+             role="menuitem"
+             aria-label="Ir para seção de contato">
+            <span class="header__arrow">&gt;</span> {{ contactSignal() }}
+          </a>
 
-    <!-- Menu Mobile Toggle -->
+      <app-language-selector></app-language-selector>
+    </div>
     <button (click)="toggleMenu()"
             class="header__mobile-toggle"
             role="button"
@@ -73,47 +73,47 @@
        role="menu"
        [attr.aria-hidden]="!isMenuOpen">
 
-    <div class="header__mobile-links">
-      <a href="#hero"
-         (click)="navigateToSection(sections.HERO, $event)"
-         class="header__mobile-link"
-         [class.header__mobile-link--active]="isActive(sections.HERO)"
-         role="menuitem"
-         aria-label="Ir para seção inicial">
-        <span class="header__arrow">&gt;</span> Início
-      </a>
-      <a href="#about"
-         (click)="navigateToSection(sections.ABOUT, $event)"
-         class="header__mobile-link"
-         [class.header__mobile-link--active]="isActive(sections.ABOUT)"
-         role="menuitem"
-         aria-label="Ir para seção sobre mim">
-        <span class="header__arrow">&gt;</span> Sobre
-      </a>
-      <a href="#portfolio"
-         (click)="navigateToSection(sections.PORTFOLIO, $event)"
-         class="header__mobile-link"
-         [class.header__mobile-link--active]="isActive(sections.PORTFOLIO)"
-         role="menuitem"
-         aria-label="Ir para seção de portfólio">
-        <span class="header__arrow">&gt;</span> Portfólio
-      </a>
-      <a href="#skills"
-         (click)="navigateToSection(sections.SKILLS, $event)"
-         class="header__mobile-link"
-         [class.header__mobile-link--active]="isActive(sections.SKILLS)"
-         role="menuitem"
-         aria-label="Ir para seção de habilidades">
-        <span class="header__arrow">&gt;</span> Skills
-      </a>
-      <a href="#contact"
-         (click)="navigateToSection(sections.CONTACT, $event)"
-         class="header__mobile-link"
-         [class.header__mobile-link--active]="isActive(sections.CONTACT)"
-         role="menuitem"
-         aria-label="Ir para seção de contato">
-        <span class="header__arrow">&gt;</span> Contato
-      </a>
-    </div>
+        <div class="header__mobile-links">
+          <a href="#hero"
+             (click)="navigateToSection(sections.HERO, $event)"
+             class="header__mobile-link"
+             [class.header__mobile-link--active]="isActive(sections.HERO)"
+             role="menuitem"
+             aria-label="Ir para seção inicial">
+            <span class="header__arrow">&gt;</span> {{ homeSignal() }}
+          </a>
+          <a href="#about"
+             (click)="navigateToSection(sections.ABOUT, $event)"
+             class="header__mobile-link"
+             [class.header__mobile-link--active]="isActive(sections.ABOUT)"
+             role="menuitem"
+             aria-label="Ir para seção sobre mim">
+            <span class="header__arrow">&gt;</span> {{ aboutSignal() }}
+          </a>
+          <a href="#portfolio"
+             (click)="navigateToSection(sections.PORTFOLIO, $event)"
+             class="header__mobile-link"
+             [class.header__mobile-link--active]="isActive(sections.PORTFOLIO)"
+             role="menuitem"
+             aria-label="Ir para seção de portfólio">
+            <span class="header__arrow">&gt;</span> {{ portfolioSignal() }}
+          </a>
+          <a href="#skills"
+             (click)="navigateToSection(sections.SKILLS, $event)"
+             class="header__mobile-link"
+             [class.header__mobile-link--active]="isActive(sections.SKILLS)"
+             role="menuitem"
+             aria-label="Ir para seção de habilidades">
+            <span class="header__arrow">&gt;</span> {{ skillsSignal() }}
+          </a>
+          <a href="#contact"
+             (click)="navigateToSection(sections.CONTACT, $event)"
+             class="header__mobile-link"
+             [class.header__mobile-link--active]="isActive(sections.CONTACT)"
+             role="menuitem"
+             aria-label="Ir para seção de contato">
+            <span class="header__arrow">&gt;</span> {{ contactSignal() }}
+          </a>
+        </div>
   </div>
 </header>

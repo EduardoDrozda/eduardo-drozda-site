@@ -1,6 +1,6 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, computed, inject, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataService } from '@core/services/data.service';
+import { TranslationService } from '@core/services/translation.service';
 import { Skill } from '@core/models/skill.model';
 
 @Component({
@@ -10,18 +10,61 @@ import { Skill } from '@core/models/skill.model';
   styleUrl: './skills.scss'
 })
 export class Skills implements OnInit, AfterViewInit {
-  skills: Skill[] = [];
   animatedCards: Set<number> = new Set();
+
+  // Inject service
+  private translationService = inject(TranslationService);
+
+  // Signal-based translations
+  titleSignal = this.translationService.translateSignal('skills.title');
+  frontendSignal = this.translationService.translateSignal('skills.frontend.name');
+  backendSignal = this.translationService.translateSignal('skills.backend.name');
+  mobileSignal = this.translationService.translateSignal('skills.mobile.name');
+  languagesSignal = this.translationService.translateSignal('skills.frontend.languages');
+  frameworksSignal = this.translationService.translateSignal('skills.frontend.frameworks');
+
+  // Stats translations
+  areasOfExpertiseSignal = this.translationService.translateSignal('skills.stats.areasOfExpertise');
+  technologiesSignal = this.translationService.translateSignal('skills.stats.technologies');
+  projectsSignal = this.translationService.translateSignal('skills.stats.projects');
+
+  skillsData = computed(() => {
+    return [
+      {
+        id: 'frontend',
+        name: this.translationService.translateSignal('skills.frontend.name')(),
+        category: 'frontend' as const,
+        languages: ['HTML', 'Javascript/TypeScript', 'CSS/SASS'],
+        frameworks: ['Angular', 'React', 'Next'],
+        icon: 'assets/icons/html5.svg',
+        description: this.translationService.translateSignal('skills.frontend.description')()
+      },
+      {
+        id: 'backend',
+        name: this.translationService.translateSignal('skills.backend.name')(),
+        category: 'backend' as const,
+        languages: ['Javascript/TypeScript', 'PHP', 'C#'],
+        frameworks: ['Node JS', 'Express', 'Nest JS', 'Laravel', '.NET', 'MySQL', 'Postgres', 'Docker', 'Docker Compose'],
+        icon: 'assets/icons/backend.svg',
+        description: this.translationService.translateSignal('skills.backend.description')()
+      },
+      {
+        id: 'mobile',
+        name: this.translationService.translateSignal('skills.mobile.name')(),
+        category: 'mobile' as const,
+        languages: ['Javascript/TypeScript'],
+        frameworks: ['React Native', 'Ionic'],
+        icon: 'assets/icons/mobile.svg',
+        description: this.translationService.translateSignal('skills.mobile.description')()
+      }
+    ]
+  });
 
   @ViewChild('skillsGrid', { static: false }) skillsGrid!: ElementRef;
 
-  constructor(
-    private dataService: DataService
-  ) {}
-
   ngOnInit(): void {
-    this.dataService.getSkills().subscribe(skills => {
-      this.skills = skills;
+    effect(() => {
+      this.skillsData();
     });
   }
 

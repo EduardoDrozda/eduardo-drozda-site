@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ThemeService } from '../../../core/services/theme.service';
-import { ContactInfo } from '../../../core/models/skill.model';
-import { DataService } from '../../../core/services/data.service';
+import { TranslationService } from '@core/services/translation.service';
 
 @Component({
   selector: 'app-footer',
@@ -11,31 +9,23 @@ import { DataService } from '../../../core/services/data.service';
   styleUrl: './footer.scss'
 })
 export class Footer implements OnInit {
-  isDarkMode = false;
-  contactInfo: ContactInfo | null = null;
   currentYear = new Date().getFullYear();
 
-  constructor(
-    private themeService: ThemeService,
-    private dataService: DataService
-  ) {}
+  // Inject services
+  private translationService = inject(TranslationService);
+
+  // Signal-based translations
+  copyrightSignal = this.translationService.translateSignal('footer.developedBy');
+  titleSignal = this.translationService.translateSignal('footer.title');
+  specialtySignal = this.translationService.translateSignal('footer.specialty');
 
   ngOnInit(): void {
-    this.themeService.isDarkMode$.subscribe(isDark => {
-      this.isDarkMode = isDark;
-    });
-
-    this.dataService.getContactInfo().subscribe(info => {
-      this.contactInfo = info;
-    });
   }
 
   downloadCV(): void {
-    if (this.contactInfo?.cvUrl) {
-      const link = document.createElement('a');
-      link.href = this.contactInfo.cvUrl;
-      link.download = 'cv-eduardo-drozda.pdf';
-      link.click();
-    }
+    const link = document.createElement('a');
+    link.href = 'files/Curriculo Eduardo Fullstack - PT.pdf';
+    link.download = 'Curriculo Eduardo Fullstack - PT.pdf';
+    link.click();
   }
 }

@@ -1,0 +1,138 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm Eduardo Drozda",
+    "title": "SOFTWARE ENGINEER",
+    "subtitle": "NINE YEARS BUILDING SOLUTIONS",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "downloadCV": "Download CV",
+    "scrollDown": "SCROLL DOWN",
+    "accessibility": {
+      "mainSection": "Main section - Presentation",
+      "greeting": "Greeting",
+      "softwareEngineer": "Software Engineer",
+      "actionLinks": "Action links",
+      "githubProfile": "Access GitHub profile",
+      "linkedinProfile": "Access LinkedIn profile",
+      "downloadResume": "Download resume in PDF"
+    }
+  },
+  "about": {
+    "title": "Nice to meet you",
+    "description": "I'm Eduardo, a software engineer with over nine years of experience in full-stack development, dedicated to creating scalable and impactful solutions. My professional journey spans various sectors, including finance, healthcare, e-commerce, and digital payments, where I've developed platforms serving millions of users.",
+    "description2": "My expertise is particularly strong in front-end technologies like Angular, TypeScript, NgRx, and RxJS, and throughout this ecosystem, complemented by solid back-end skills in Node.js (including NestJS and Express) and .NET. I have experience designing microservices, implementing real-time systems, and integrating technologies like Kafka and Redis to enhance performance and reliability. I also focus on maintaining high code quality and automation using tools like Jest, Cypress, and Behat.",
+    "description3": "Beyond my technical skills, I've led teams, mentored fellow developers, and played a fundamental role in strategic product and architecture decisions. I'm eager to leverage this experience in dynamic, high-performance environments where I can continue to grow, collaborate, and make a significant impact.",
+    "experience": "Years of Experience",
+    "linesOfCode": "Lines of Code",
+    "quote": "It's easy to avoid mistakes; just don't do anything. But that would be the biggest mistake of all.",
+    "quoteAuthor": "— Dan Tocchini",
+    "codeSnippet": {
+      "name": "Eduardo Drozda",
+      "experience": "9+ years",
+      "specialization": "Full Stack",
+      "passion": "Transform coffee into code",
+      "mission": "Create ideas that add value",
+      "coffeeConsumption": "∞ cups/day",
+      "bugsFixed": "Countless"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "comingSoon": "Coming Soon",
+    "subtitle": "Amazing projects are coming..."
+  },
+  "skills": {
+    "title": "My Skills",
+    "frontend": {
+      "name": "Front-end",
+      "description": "I develop web interfaces adhering to the highest standards of quality and excellence in user experience.",
+      "languages": "Languages",
+      "frameworks": "Frameworks & Tools"
+    },
+    "backend": {
+      "name": "Back-end",
+      "description": "I develop secure and scalable systems, adhering to the highest quality standards, including clean code and design patterns, ensuring technical excellence.",
+      "languages": "Languages",
+      "frameworks": "Frameworks & Tools"
+    },
+    "mobile": {
+      "name": "Mobile",
+      "description": "I create varied mobile interfaces, ranging from simple applications to complex systems, using advanced technologies.",
+      "languages": "Languages",
+      "frameworks": "Frameworks & Tools"
+    },
+    "stats": {
+      "areasOfExpertise": "Areas of Expertise",
+      "technologies": "Technologies",
+      "projects": "Projects"
+    }
+  },
+  "contact": {
+    "title": "Let's talk?",
+    "subtitle": "I'm always open to new opportunities and interesting projects. If you have an idea or need help with development, don't hesitate to get in touch!",
+    "description": "I'm always open to new opportunities and interesting projects. If you have an idea or need help with development, don't hesitate to get in touch!",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "successMessage": "Thank you for contacting me. I'll respond soon!",
+      "sendNewMessage": "Send new message",
+      "error": "Error sending message. Please try again.",
+      "placeholders": {
+        "name": "Your full name",
+        "email": "your@email.com",
+        "message": "Tell me about your project or idea..."
+      },
+      "accessibility": {
+        "nameField": "Name field",
+        "emailField": "Email field",
+        "messageField": "Message field",
+        "errorMessage": "Error message",
+        "sendingMessage": "Sending message...",
+        "sendMessage": "Send message"
+      },
+      "disabled": {
+        "title": "Form temporarily unavailable",
+        "message": "The form is temporarily disabled. Please contact directly via email:"
+      }
+    },
+    "info": {
+      "email": "eduardodrozda@outlook.com",
+      "location": "Maringá/PR, Brazil",
+      "availability": "Available for projects",
+      "responseTime": "Response time:",
+      "status": "Availability:",
+      "languages": "Languages:"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "developedBy": "Developed with ❤️ by Eduardo Drozda",
+    "title": "Software Engineer",
+    "specialty": "JavaScript and UX Specialist"
+  }
+}

@@ -9,10 +9,10 @@
     <!-- Cabeçalho da Seção -->
     <header class="contact__header">
       <h2 class="contact__title glitch"
-          data-text="Vamos conversar?"
+          [attr.data-text]="titleSignal()"
           role="heading"
           aria-level="2">
-        Vamos conversar?
+        {{ titleSignal() }}
       </h2>
       <div class="contact__divider animate-neon-pulse"
            aria-hidden="true"></div>
@@ -31,23 +31,21 @@
           </div>
 
           <p class="contact__description">
-            Estou sempre aberto a novas oportunidades e projetos interessantes.
-            Se você tem uma ideia ou precisa de ajuda com desenvolvimento,
-            não hesite em entrar em contato!
+            {{ descriptionSignal() }}
           </p>
 
           <div class="contact__details">
             <div class="contact__detail">
               <i class="fas fa-envelope contact__detail-icon" aria-hidden="true"></i>
-              <span class="contact__detail-text">contato@eduardodrozda.com</span>
+              <span class="contact__detail-text">{{ emailInfoSignal() }}</span>
             </div>
             <div class="contact__detail">
               <i class="fas fa-map-marker-alt contact__detail-icon" aria-hidden="true"></i>
-              <span class="contact__detail-text">São Paulo, Brasil</span>
+              <span class="contact__detail-text">{{ locationSignal() }}</span>
             </div>
             <div class="contact__detail">
               <i class="fas fa-clock contact__detail-icon" aria-hidden="true"></i>
-              <span class="contact__detail-text">Disponível para projetos</span>
+              <span class="contact__detail-text">{{ availabilitySignal() }}</span>
             </div>
           </div>
         </div>
@@ -96,15 +94,15 @@
 
           <div class="contact__stats">
             <div class="contact__stat">
-              <span class="contact__stat-label">Tempo de resposta:</span>
+              <span class="contact__stat-label">{{ responseTimeSignal() }}</span>
               <span class="contact__stat-value">&lt; 24h</span>
             </div>
             <div class="contact__stat">
-              <span class="contact__stat-label">Disponibilidade:</span>
+              <span class="contact__stat-label">{{ statusSignal() }}</span>
               <span class="contact__stat-value contact__stat-value--online">Online</span>
             </div>
             <div class="contact__stat">
-              <span class="contact__stat-label">Idiomas:</span>
+              <span class="contact__stat-label">{{ languagesSignal() }}</span>
               <span class="contact__stat-value contact__stat-value--languages">PT, EN</span>
             </div>
           </div>
@@ -127,15 +125,15 @@
             <div class="contact__success-content">
               <i class="fas fa-check-circle contact__success-icon" aria-hidden="true"></i>
               <div class="contact__success-text">
-                <h3 class="contact__success-title">Mensagem enviada!</h3>
-                <p class="contact__success-message">Obrigado pelo contato. Responderei em breve!</p>
+                <h3 class="contact__success-title">{{ successSignal() }}</h3>
+                <p class="contact__success-message">{{ successMessageSignal() }}</p>
               </div>
             </div>
             <button (click)="resetForm()"
                     class="contact__reset-button"
                     role="button"
                     aria-label="Enviar nova mensagem">
-              Enviar nova mensagem
+              {{ sendNewMessageSignal() }}
             </button>
           </div>
 
@@ -146,10 +144,21 @@
                 role="form"
                 aria-label="Formulário de contato">
 
+            <!-- Mensagem de formulário desabilitado -->
+            <div *ngIf="isFormDisabled" class="contact__disabled-message">
+              <div class="contact__disabled-content">
+                <i class="fas fa-info-circle contact__disabled-icon" aria-hidden="true"></i>
+                <div class="contact__disabled-text">
+                  <h3 class="contact__disabled-title">{{ disabledTitleSignal() }}</h3>
+                  <p class="contact__disabled-message">{{ disabledMessageSignal() }} {{ emailInfoSignal() }}</p>
+                </div>
+              </div>
+            </div>
+
             <!-- Nome -->
             <div class="contact__form-group">
               <label for="name" class="contact__label">
-                <span class="contact__label-prompt">&gt;</span> Nome *
+                <span class="contact__label-prompt">&gt;</span> {{ nameSignal() }} *
               </label>
               <input
                 type="text"
@@ -158,15 +167,17 @@
                 name="name"
                 required
                 class="contact__input"
-                placeholder="Seu nome completo"
-                aria-label="Campo de nome"
+                [class.contact__input--disabled]="isFormDisabled"
+                [placeholder]="namePlaceholderSignal()"
+                [attr.aria-label]="nameFieldAriaSignal()"
+                [disabled]="isFormDisabled"
               />
             </div>
 
             <!-- Email -->
             <div class="contact__form-group">
               <label for="email" class="contact__label">
-                <span class="contact__label-prompt">&gt;</span> Email *
+                <span class="contact__label-prompt">&gt;</span> {{ emailSignal() }} *
               </label>
               <input
                 type="email"
@@ -175,15 +186,17 @@
                 name="email"
                 required
                 class="contact__input"
-                placeholder="seu@email.com"
-                aria-label="Campo de email"
+                [class.contact__input--disabled]="isFormDisabled"
+                [placeholder]="emailPlaceholderSignal()"
+                [attr.aria-label]="emailFieldAriaSignal()"
+                [disabled]="isFormDisabled"
               />
             </div>
 
             <!-- Mensagem -->
             <div class="contact__form-group">
               <label for="message" class="contact__label">
-                <span class="contact__label-prompt">&gt;</span> Mensagem *
+                <span class="contact__label-prompt">&gt;</span> {{ messageSignal() }} *
               </label>
               <textarea
                 id="message"
@@ -192,8 +205,10 @@
                 required
                 rows="6"
                 class="contact__textarea"
-                placeholder="Conte-me sobre seu projeto ou ideia..."
-                aria-label="Campo de mensagem"
+                [class.contact__textarea--disabled]="isFormDisabled"
+                [placeholder]="messagePlaceholderSignal()"
+                [attr.aria-label]="messageFieldAriaSignal()"
+                [disabled]="isFormDisabled"
               ></textarea>
             </div>
 
@@ -201,7 +216,7 @@
             <div *ngIf="errorMessage"
                  class="contact__error"
                  role="alert"
-                 aria-label="Mensagem de erro">
+                 [attr.aria-label]="errorMessageAriaSignal()">
               <div class="contact__error-content">
                 <i class="fas fa-exclamation-triangle contact__error-icon" aria-hidden="true"></i>
                 <span class="contact__error-text">{{ errorMessage }}</span>
@@ -211,14 +226,16 @@
             <!-- Botão Submit -->
             <button
               type="submit"
-              [disabled]="isSubmitting"
+              [disabled]="isSubmitting || isFormDisabled"
               class="contact__submit"
+              [class.contact__submit--disabled]="isFormDisabled"
               role="button"
-              [attr.aria-label]="isSubmitting ? 'Enviando mensagem...' : 'Enviar mensagem'"
+              [attr.aria-label]="isSubmitting ? sendingMessageAriaSignal() : sendMessageAriaSignal()"
             >
               <i *ngIf="isSubmitting" class="fas fa-spinner fa-spin contact__submit-icon" aria-hidden="true"></i>
-              <i *ngIf="!isSubmitting" class="fas fa-paper-plane contact__submit-icon" aria-hidden="true"></i>
-              <span class="contact__submit-text">{{ isSubmitting ? 'Enviando...' : 'Enviar Mensagem' }}</span>
+              <i *ngIf="!isSubmitting && !isFormDisabled" class="fas fa-paper-plane contact__submit-icon" aria-hidden="true"></i>
+              <i *ngIf="!isSubmitting && isFormDisabled" class="fas fa-ban contact__submit-icon" aria-hidden="true"></i>
+              <span class="contact__submit-text">{{ isSubmitting ? sendingSignal() : sendSignal() }}</span>
             </button>
           </form>
         </div>

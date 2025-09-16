@@ -1,4 +1,4 @@
-<section id="hero" class="hero" role="banner" aria-label="Seção principal - Apresentação">
+<section id="hero" class="hero" role="banner" [attr.aria-label]="mainSectionAriaSignal()">
   <div class="hero__background">
     <div class="hero__matrix-rain">
       @for (i of
@@ -15,39 +15,39 @@
   <div class="hero__container">
     <div class="hero__content">
       <!-- Saudação -->
-      <div class="hero__greeting" role="text" aria-label="Saudação">
-        &gt; Olá, eu sou Eduardo Drozda
+      <div class="hero__greeting" role="text" [attr.aria-label]="greetingAriaSignal()">
+        &gt; {{ greetingSignal() }}
       </div>
 
       <!-- Título Principal -->
       <h1 class="hero__title">
-        <span role="heading" aria-level="1" aria-label="Engenheiro de Software">
+        <span role="heading" aria-level="1" [attr.aria-label]="softwareEngineerAriaSignal()">
           {{ displayedText() }}<span class="terminal-cursor" [class.blinking]="isTyping"></span>
         </span>
       </h1>
 
       <!-- Subtítulo -->
       <h2 class="hero__subtitle" role="heading" aria-level="2">
-        HÁ NOVE ANOS CONSTRUINDO SOLUÇÕES
+        {{ subtitleSignal() }}
       </h2>
 
       <!-- Botões de Ação -->
-      <nav class="hero__actions" role="navigation" aria-label="Links de ação">
+      <nav class="hero__actions" role="navigation" [attr.aria-label]="actionLinksAriaSignal()">
         <a href="https://github.com/eduardodrozda" target="_blank" rel="noopener noreferrer" class="hero__button"
-          role="button" aria-label="Acessar perfil no GitHub">
+          role="button" [attr.aria-label]="githubProfileAriaSignal()">
           <img src="images/github.png" alt="GitHub" class="hero__icon" />
           <span>GitHub</span>
           <span class="hero__external-icon" aria-hidden="true">↗</span>
         </a>
 
         <a href="https://linkedin.com/in/eduardodrozda" target="_blank" rel="noopener noreferrer" class="hero__button"
-          role="button" aria-label="Acessar perfil no LinkedIn">
+          role="button" [attr.aria-label]="linkedinProfileAriaSignal()">
           <img src="images/linkedin.png" alt="LinkedIn" class="hero__icon" />
           <span>LinkedIn</span>
           <span class="hero__external-icon" aria-hidden="true">↗</span>
         </a>
 
-        <button (click)="downloadCV()" class="hero__button" role="button" aria-label="Baixar currículo em PDF">
+        <button (click)="downloadCV()" class="hero__button" role="button" [attr.aria-label]="downloadResumeAriaSignal()">
           <img src="images/file.png" alt="Download" class="hero__icon" />
           <span>Download CV</span>
         </button>

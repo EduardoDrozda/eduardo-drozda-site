@@ -1,7 +1,6 @@
-import { Component, OnInit, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, OnInit, signal, WritableSignal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataService } from '@core/services/data.service';
-import { PersonalInfo } from '@core/models/skill.model';
+import { TranslationService } from '@core/services/translation.service';
 
 @Component({
   selector: 'app-hero',
@@ -10,25 +9,32 @@ import { PersonalInfo } from '@core/models/skill.model';
   styleUrl: './hero.scss'
 })
 export class Hero implements OnInit {
-  personalInfo: PersonalInfo | null = null;
-
   matrixTexts: string[] = [];
+  private typingTimer: any = null;
 
   displayedText: WritableSignal<string> = signal('');
-  fullText: string = 'ENGENHEIRO DE SOFTWARE';
   isTyping: boolean = false;
 
-  constructor(
-    private dataService: DataService
-  ) {
+  private translationService = inject(TranslationService);
+
+  titleText = 'SOFTWARE ENGINEER';
+  greetingSignal = this.translationService.translateSignal('hero.greeting');
+  subtitleSignal = this.translationService.translateSignal('hero.subtitle');
+
+  // Accessibility translations
+  mainSectionAriaSignal = this.translationService.translateSignal('hero.accessibility.mainSection');
+  greetingAriaSignal = this.translationService.translateSignal('hero.accessibility.greeting');
+  softwareEngineerAriaSignal = this.translationService.translateSignal('hero.accessibility.softwareEngineer');
+  actionLinksAriaSignal = this.translationService.translateSignal('hero.accessibility.actionLinks');
+  githubProfileAriaSignal = this.translationService.translateSignal('hero.accessibility.githubProfile');
+  linkedinProfileAriaSignal = this.translationService.translateSignal('hero.accessibility.linkedinProfile');
+  downloadResumeAriaSignal = this.translationService.translateSignal('hero.accessibility.downloadResume');
+
+  constructor() {
     this.initializeMatrixTexts();
   }
 
   ngOnInit(): void {
-    this.dataService.getPersonalInfo().subscribe(info => {
-      this.personalInfo = info;
-    });
-
     this.startTypewriting();
   }
 
@@ -40,7 +46,6 @@ export class Hero implements OnInit {
       'API', 'REST', 'GRAPHQL', 'MICROSERVICES', 'AGILE', 'SCRUM', 'TESTING', 'CYBERSECURITY'
     ];
 
-    // Criar 100 textos estáticos
     for (let i = 0; i < 100; i++) {
       this.matrixTexts.push(techKeywords[i % techKeywords.length]);
     }
@@ -56,7 +61,6 @@ export class Hero implements OnInit {
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
-      // Calcular posição considerando o header fixo (5rem = 80px)
       const headerHeight = 80;
       const elementPosition = element.offsetTop - headerHeight;
 
@@ -71,20 +75,29 @@ export class Hero implements OnInit {
     return this.matrixTexts[index - 1] || 'ANGULAR';
   }
 
+  private clearTypingTimer(): void {
+    if (this.typingTimer) {
+      clearTimeout(this.typingTimer);
+      this.typingTimer = null;
+    }
+    this.isTyping = false;
+  }
+
   private startTypewriting(): void {
     this.isTyping = true;
     this.displayedText.set('');
 
     let currentIndex = 0;
-    const typingSpeed = 90; // Velocidade de digitação em ms
+    const typingSpeed = 100;
 
     const typeNextCharacter = () => {
-      if (currentIndex < this.fullText.length) {
-        this.displayedText.update(text => text + this.fullText[currentIndex]);
+      if (currentIndex < this.titleText.length) {
+        this.displayedText.update(text => text + this.titleText[currentIndex]);
         currentIndex++;
-        setTimeout(typeNextCharacter, typingSpeed);
+        this.typingTimer = setTimeout(typeNextCharacter, typingSpeed);
       } else {
         this.isTyping = false;
+        this.typingTimer = null;
       }
     };
 

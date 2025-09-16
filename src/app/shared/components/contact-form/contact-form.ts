@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ContactService, ContactFormData } from '../../../core/services/contact.service';
-import { ThemeService } from '../../../core/services/theme.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -10,7 +9,7 @@ import { ThemeService } from '../../../core/services/theme.service';
   templateUrl: './contact-form.html',
   styleUrl: './contact-form.scss'
 })
-export class ContactForm implements OnInit {
+export class ContactForm {
   formData: ContactFormData = {
     name: '',
     email: '',
@@ -19,19 +18,11 @@ export class ContactForm implements OnInit {
 
   isSubmitting = false;
   isSubmitted = false;
-  isDarkMode = false;
   errorMessage = '';
 
   constructor(
     private contactService: ContactService,
-    private themeService: ThemeService
   ) {}
-
-  ngOnInit(): void {
-    this.themeService.isDarkMode$.subscribe(isDark => {
-      this.isDarkMode = isDark;
-    });
-  }
 
   onSubmit(): void {
     if (this.isSubmitting) return;

@@ -6,6 +6,7 @@ import { Footer } from '@shared/components/footer/footer';
 import { Home } from '@pages/home/home';
 import { SEOService } from '@core/services/seo.service';
 import { GoogleAnalyticsService } from '@core/services/google-analytics.service';
+import { TranslationService } from '@core/services/translation.service';
 import { SEOOptimizer } from '@core/utils/seo-optimizer';
 
 @Component({
@@ -18,12 +19,16 @@ export class App implements OnInit {
   constructor(
     private seoService: SEOService,
     private googleAnalytics: GoogleAnalyticsService,
+    private translationService: TranslationService,
     private meta: Meta,
     private title: Title,
     @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit(): void {
+    // Initialize translation service
+    this.translationService.initializeLanguage();
+
     // Initialize SEO
     this.initializeSEO();
 

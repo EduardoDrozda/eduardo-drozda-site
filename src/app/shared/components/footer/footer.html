@@ -3,14 +3,14 @@
     <div class="footer__content">
       <div class="footer__info">
         <h3 class="footer__name">Eduardo Drozda</h3>
-        <p class="footer__title">Engenheiro de Software</p>
-        <p class="footer__specialty">Especialista em JavaScript e UX</p>
+        <p class="footer__title">{{ titleSignal() }}</p>
+        <p class="footer__specialty">{{ specialtySignal() }}</p>
       </div>
     </div>
 
     <div class="footer__bottom">
       <p class="footer__copyright">
-        &copy; {{ currentYear }} Eduardo Drozda. Todos os direitos reservados.
+        {{ copyrightSignal() }}
       </p>
     </div>
   </div>

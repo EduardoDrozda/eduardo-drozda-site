@@ -1,0 +1,17 @@
+<div class="language-toggle">
+  <button
+    (click)="toggleLanguage()"
+    class="language-toggle__button"
+    [attr.aria-label]="'Alternar idioma atual: ' + getLanguageDisplayName(currentLanguage())"
+    [title]="'Clique para alternar entre ' + getLanguageDisplayName(currentLanguage()) + ' e ' + getOtherLanguageDisplayName()">
+
+    <div class="language-toggle__flag">
+      {{ getLanguageFlag(currentLanguage()) }}
+    </div>
+
+    <div class="language-toggle__indicator">
+      <span class="language-toggle__text">{{ getLanguageCode(currentLanguage()) }}</span>
+      <span class="language-toggle__arrow">⇄</span>
+    </div>
+  </button>
+</div>

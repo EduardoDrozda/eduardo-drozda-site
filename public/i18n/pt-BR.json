@@ -1,0 +1,138 @@
+{
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior"
+  },
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre",
+    "portfolio": "Portfólio",
+    "skills": "Skills",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou Eduardo Drozda",
+    "title": "SOFTWARE ENGINEER",
+    "subtitle": "HÁ NOVE ANOS CONSTRUINDO SOLUÇÕES",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "downloadCV": "Download CV",
+    "scrollDown": "SCROLL DOWN",
+    "accessibility": {
+      "mainSection": "Seção principal - Apresentação",
+      "greeting": "Saudação",
+      "softwareEngineer": "Engenheiro de Software",
+      "actionLinks": "Links de ação",
+      "githubProfile": "Acessar perfil no GitHub",
+      "linkedinProfile": "Acessar perfil no LinkedIn",
+      "downloadResume": "Baixar currículo em PDF"
+    }
+  },
+  "about": {
+    "title": "É um prazer te conhecer",
+    "description": "Sou Eduardo, engenheiro de software com um pouco mais de nove anos de experiência em desenvolvimento full-stack, dedicado à criação de soluções escaláveis e impactantes. Minha trajetória profissional abrange diversos setores, incluindo finanças, saúde, e-commerce e pagamentos digitais, onde desenvolvi plataformas que atendem milhões de usuários.",
+    "description2": "Minha expertise é particularmente forte em tecnologias front-end, como Angular, TypeScript, NgRx e RxJS, e em todo esse ecossistema, complementada por sólidas habilidades de back-end em Node.js (incluindo NestJS e Express) e .NET. Tenho experiência em projetar microsserviços, implementar sistemas em tempo real e integrar tecnologias como Kafka e Redis para aprimorar o desempenho e a confiabilidade. Também me dedico a manter a alta qualidade e a automação do código, utilizando ferramentas como Jest, Cypress e Behat.",
+    "description3": "Além das minhas habilidades técnicas, liderei equipes, mentorei colegas desenvolvedores e desempenhei um papel fundamental em decisões estratégicas de produtos e arquitetura. Estou ansioso para aproveitar essa experiência em ambientes dinâmicos e de alto desempenho, onde posso continuar a crescer, colaborar e causar um impacto significativo.",
+    "experience": "Anos de Experiência",
+    "linesOfCode": "Linhas de Código",
+    "quote": "É fácil evitar erros; basta não fazer nada. Mas isso seria o maior erro de todos.",
+    "quoteAuthor": "— Dan Tocchini",
+    "codeSnippet": {
+      "name": "Eduardo Drozda",
+      "experience": "9+ anos",
+      "specialization": "Full Stack",
+      "passion": "Transformar café em código",
+      "mission": "Criar ideias que agregam valor",
+      "coffeeConsumption": "∞ xícaras/dia",
+      "bugsFixed": "Incontáveis"
+    }
+  },
+  "portfolio": {
+    "title": "Portfólio",
+    "comingSoon": "Em Breve",
+    "subtitle": "Projetos incríveis estão chegando..."
+  },
+  "skills": {
+    "title": "Minhas Skills",
+    "frontend": {
+      "name": "Front-end",
+      "description": "Desenvolvo interfaces web aderindo aos mais elevados padrões de qualidade e excelência na experiência do usuário.",
+      "languages": "Linguagens",
+      "frameworks": "Frameworks & Tools"
+    },
+    "backend": {
+      "name": "Back-end",
+      "description": "Desenvolvo sistemas seguros e escaláveis, aderindo aos mais altos padrões de qualidade, incluindo clean code e design patterns, assegurando excelência técnica.",
+      "languages": "Linguagens",
+      "frameworks": "Frameworks & Tools"
+    },
+    "mobile": {
+      "name": "Mobile",
+      "description": "Crio interfaces móveis variadas, abrangendo desde aplicações simples até sistemas complexos, utilizando tecnologias avançadas.",
+      "languages": "Linguagens",
+      "frameworks": "Frameworks & Tools"
+    },
+    "stats": {
+      "areasOfExpertise": "Áreas de Expertise",
+      "technologies": "Tecnologias",
+      "projects": "Projetos"
+    }
+  },
+  "contact": {
+    "title": "Vamos conversar?",
+    "subtitle": "Estou sempre aberto a novas oportunidades e projetos interessantes. Se você tem uma ideia ou precisa de ajuda com desenvolvimento, não hesite em entrar em contato!",
+    "description": "Estou sempre aberto a novas oportunidades e projetos interessantes. Se você tem uma ideia ou precisa de ajuda com desenvolvimento, não hesite em entrar em contato!",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "send": "Enviar Mensagem",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "successMessage": "Obrigado pelo contato. Responderei em breve!",
+      "sendNewMessage": "Enviar nova mensagem",
+      "error": "Erro ao enviar mensagem. Tente novamente.",
+      "placeholders": {
+        "name": "Seu nome completo",
+        "email": "seu@email.com",
+        "message": "Conte-me sobre seu projeto ou ideia..."
+      },
+      "accessibility": {
+        "nameField": "Campo de nome",
+        "emailField": "Campo de email",
+        "messageField": "Campo de mensagem",
+        "errorMessage": "Mensagem de erro",
+        "sendingMessage": "Enviando mensagem...",
+        "sendMessage": "Enviar mensagem"
+      },
+      "disabled": {
+        "title": "Formulário temporariamente indisponível",
+        "message": "O formulário está temporariamente desabilitado. Entre em contato diretamente pelo email:"
+      }
+    },
+    "info": {
+      "email": "eduardodrozda@outlook.com",
+      "location": "Maringá/PR, Brasil",
+      "availability": "Disponível para projetos",
+      "responseTime": "Tempo de resposta:",
+      "status": "Disponibilidade:",
+      "languages": "Idiomas:"
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "developedBy": "Desenvolvido com ❤️ por Eduardo Drozda",
+    "title": "Engenheiro de Software",
+    "specialty": "Especialista em JavaScript e UX"
+  }
+}

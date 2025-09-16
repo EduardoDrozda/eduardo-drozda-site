@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataService } from '@core/services/data.service';
-import { PersonalInfo } from '@core/models/skill.model';
+import { TranslationService } from '@core/services/translation.service';
 import { Nl2brPipe } from '@shared/pipes/nl2br-pipe';
 
 @Component({
@@ -11,15 +10,20 @@ import { Nl2brPipe } from '@shared/pipes/nl2br-pipe';
   styleUrl: './about.scss'
 })
 export class About implements OnInit {
-  personalInfo: PersonalInfo | null = null;
+  // Inject service
+  private translationService = inject(TranslationService);
 
-  constructor(
-    private dataService: DataService
-  ) {}
+  // Signal-based translations
+  titleSignal = this.translationService.translateSignal('about.title');
+  descriptionSignal = this.translationService.translateSignal('about.description');
+  description2Signal = this.translationService.translateSignal('about.description2');
+  description3Signal = this.translationService.translateSignal('about.description3');
+  experienceSignal = this.translationService.translateSignal('about.experience');
+  linesOfCodeSignal = this.translationService.translateSignal('about.linesOfCode');
+  quoteSignal = this.translationService.translateSignal('about.quote');
+  quoteAuthorSignal = this.translationService.translateSignal('about.quoteAuthor');
 
   ngOnInit(): void {
-    this.dataService.getPersonalInfo().subscribe(info => {
-      this.personalInfo = info;
-    });
+    // Component initialization
   }
 }

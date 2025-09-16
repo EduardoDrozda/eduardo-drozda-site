@@ -1,39 +1,25 @@
-<section
-  id="skills"
-  class="skills"
-  role="region"
-  aria-label="Seção de habilidades técnicas"
->
+<section id="skills" class="skills" role="region" aria-label="Seção de habilidades técnicas">
   <div class="skills__container">
 
     <!-- Cabeçalho da Seção -->
     <header class="skills__header">
-      <h2 class="skills__title glitch"
-          data-text="Minhas Skills"
-          role="heading"
-          aria-level="2">
-        Minhas Skills
+      <h2 class="skills__title glitch" [attr.data-text]="titleSignal()" role="heading" aria-level="2">
+        {{ titleSignal() }}
       </h2>
       <div class="skills__divider animate-neon-pulse" aria-hidden="true"></div>
     </header>
 
-           <!-- Grid de Skills -->
-           <div class="skills__grid" #skillsGrid>
-             <article
-               *ngFor="let skill of skills; let i = index"
-               class="skills__card"
-               role="article"
-               [attr.aria-label]="'Habilidade: ' + skill.name"
-             >
+    <!-- Grid de Skills -->
+    <div class="skills__grid" #skillsGrid>
+      <article *ngFor="let skill of skillsData(); let i = index" class="skills__card" role="article"
+        [attr.aria-label]="'Habilidade: ' + skill.name">
 
         <!-- Header do Card -->
         <header class="skills__card-header">
           <div class="skills__card-icon-title">
             <div class="skills__card-icon">
-              <img [src]="getSkillIcon(skill.id)"
-                   [alt]="skill.name + ' icon'"
-                   class="skills__card-icon-img"
-                   aria-hidden="true" />
+              <img [src]="getSkillIcon(skill.id)" [alt]="skill.name + ' icon'" class="skills__card-icon-img"
+                aria-hidden="true" />
             </div>
             <h3 class="skills__card-title">
               {{ skill.name }}
@@ -49,13 +35,10 @@
         <div class="skills__section">
           <h4 class="skills__section-title">
             <i class="fas fa-code" aria-hidden="true"></i>
-            Linguagens
+            {{ languagesSignal() }}
           </h4>
           <div class="skills__badges">
-            <span
-              *ngFor="let language of skill.languages"
-              class="skills__badge"
-            >
+            <span *ngFor="let language of skill.languages" class="skills__badge">
               {{ language }}
             </span>
           </div>
@@ -65,13 +48,10 @@
         <div class="skills__section">
           <h4 class="skills__section-title">
             <i class="fas fa-tools" aria-hidden="true"></i>
-            Frameworks & Tools
+            {{ frameworksSignal() }}
           </h4>
           <div class="skills__badges">
-            <span
-              *ngFor="let framework of skill.frameworks"
-              class="skills__badge"
-            >
+            <span *ngFor="let framework of skill.frameworks" class="skills__badge">
               {{ framework }}
             </span>
           </div>
@@ -90,24 +70,22 @@
       <div class="skills__stats-grid">
         <div class="skills__stat">
           <div class="skills__stat-number skills__stat-number--cyber">3+</div>
-          <div class="skills__stat-label">Áreas de Expertise</div>
+          <div class="skills__stat-label">{{ areasOfExpertiseSignal() }}</div>
         </div>
         <div class="skills__stat">
           <div class="skills__stat-number skills__stat-number--pink">15+</div>
-          <div class="skills__stat-label">Tecnologias</div>
+          <div class="skills__stat-label">{{ technologiesSignal() }}</div>
         </div>
         <div class="skills__stat">
           <div class="skills__stat-number skills__stat-number--green">∞</div>
-          <div class="skills__stat-label">Projetos</div>
+          <div class="skills__stat-label">{{ projectsSignal() }}</div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Terminal prompt decorativo -->
-  <div class="skills__terminal-prompt"
-       role="complementary"
-       aria-label="Terminal prompt decorativo">
+  <div class="skills__terminal-prompt" role="complementary" aria-label="Terminal prompt decorativo">
     <div class="skills__terminal-content">
       <span class="skills__terminal-user">eduardo@skills:~$</span>
       <span class="terminal-cursor"></span>

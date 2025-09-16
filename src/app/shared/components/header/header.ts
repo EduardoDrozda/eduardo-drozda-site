@@ -1,11 +1,13 @@
-import { Component, OnInit, HostListener, WritableSignal, signal } from '@angular/core';
+import { Component, OnInit, HostListener, WritableSignal, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationService } from '@core/services/navigation.service';
+import { TranslationService } from '@core/services/translation.service';
 import { SectionEnum } from '@pages/home/enums/section.enum';
+import { LanguageSelector } from '@shared/components/language-selector/language-selector';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule],
+  imports: [CommonModule, LanguageSelector],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
@@ -14,9 +16,16 @@ export class Header implements OnInit {
   sections = SectionEnum;
   activeSection: WritableSignal<SectionEnum> = signal(SectionEnum.HERO);
 
-  constructor(
-    private navigationService: NavigationService
-  ) {}
+  // Inject services
+  private navigationService = inject(NavigationService);
+  private translationService = inject(TranslationService);
+
+  // Signal-based translations
+  homeSignal = this.translationService.translateSignal('navigation.home');
+  aboutSignal = this.translationService.translateSignal('navigation.about');
+  portfolioSignal = this.translationService.translateSignal('navigation.portfolio');
+  skillsSignal = this.translationService.translateSignal('navigation.skills');
+  contactSignal = this.translationService.translateSignal('navigation.contact');
 
   ngOnInit(): void {
     this.updateActiveSection();
@@ -30,7 +39,7 @@ export class Header implements OnInit {
   updateActiveSection(): void {
     if (typeof window === 'undefined') return;
 
-    const sections = [this.sections.HERO, this.sections.ABOUT, this.sections.SKILLS, this.sections.CONTACT];
+    const sections = [this.sections.HERO, this.sections.ABOUT, this.sections.PORTFOLIO, this.sections.SKILLS, this.sections.CONTACT];
     const scrollPosition = window.scrollY + 180;
 
     for (const section of sections) {

@@ -8,18 +8,30 @@
     <!-- Cabeçalho da Seção -->
     <header class="about__header">
       <h2 class="about__title" role="heading" aria-level="2">
-        É um prazer te conhecer
+        {{ titleSignal() }}
       </h2>
       <div class="about__divider" aria-hidden="true"></div>
     </header>
 
-    <div class="about__content" *ngIf="personalInfo">
+    <div class="about__content">
       <!-- Conteúdo Textual -->
       <article class="about__text">
         <!-- Descrição Principal -->
         <div class="about__description">
           <div class="about__description-content"
-               [innerHTML]="personalInfo.description | nl2br"
+               [innerHTML]="descriptionSignal() | nl2br"
+               role="text"
+               aria-label="Descrição profissional de Eduardo Drozda">
+          </div>
+          <br />
+          <div class="about__description-content"
+               [innerHTML]="description2Signal() | nl2br"
+               role="text"
+               aria-label="Descrição profissional de Eduardo Drozda">
+          </div>
+          <br />
+          <div class="about__description-content"
+               [innerHTML]="description3Signal() | nl2br"
                role="text"
                aria-label="Descrição profissional de Eduardo Drozda">
           </div>
@@ -29,11 +41,11 @@
         <div class="about__stats">
           <div class="about__stat">
             <div class="about__stat-number">9+</div>
-            <div class="about__stat-label">Anos de Experiência</div>
+            <div class="about__stat-label">{{ experienceSignal() }}</div>
           </div>
           <div class="about__stat">
             <div class="about__stat-number">∞</div>
-            <div class="about__stat-label">Linhas de Código</div>
+            <div class="about__stat-label">{{ linesOfCodeSignal() }}</div>
           </div>
         </div>
 
@@ -42,10 +54,10 @@
           <p class="about__quote-text"
              role="text"
              aria-label="Citação inspiradora">
-            {{ personalInfo.quote }}
+            {{ quoteSignal() }}
           </p>
           <footer class="about__quote-author">
-            <cite>— Dan Tocchini</cite>
+            <cite>{{ quoteAuthorSignal() }}</cite>
           </footer>
         </blockquote>
       </article>
@@ -54,7 +66,7 @@
       <div class="about__image-container">
         <img
           src="images/me.jpeg"
-          [alt]="personalInfo.name + ' - Engenheiro de Software'"
+          alt="Eduardo Drozda - Engenheiro de Software"
           class="about__image"
           loading="lazy"
         />
