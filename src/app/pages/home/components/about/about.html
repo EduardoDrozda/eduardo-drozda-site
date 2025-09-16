@@ -74,13 +74,13 @@
         <!-- Código Criativo da Carreira -->
         <div class="about__code-snippet">
           <pre class="about__code-text"><code>const softwareEngineer = {{ '{' }}
-  name: "Eduardo Drozda",
-  experience: "9+ anos",
-  specialization: "Full Stack",
-  passion: "Transformar café em código",
-  mission: "Criar ideias que agregam valor",
-  coffeeConsumption: "∞ xícaras/dia",
-  bugsFixed: "Incontáveis"
+  name: "{{ codeNameSignal() }}",
+  experience: "{{ codeExperienceSignal() }}",
+  specialization: "{{ codeSpecializationSignal() }}",
+  passion: "{{ codePassionSignal() }}",
+  mission: "{{ codeMissionSignal() }}",
+  coffeeConsumption: "{{ codeCoffeeSignal() }}",
+  bugsFixed: "{{ codeBugsSignal() }}"
 {{ '}' }};</code></pre>
         </div>
       </div>

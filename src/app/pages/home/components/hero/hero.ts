@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, WritableSignal, inject } from '@angular/core';
+import { Component, OnInit, signal, WritableSignal, inject, afterNextRender } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '@core/services/translation.service';
 
@@ -13,7 +13,7 @@ export class Hero implements OnInit {
   private typingTimer: any = null;
 
   displayedText: WritableSignal<string> = signal('');
-  isTyping: boolean = false;
+  isTyping: WritableSignal<boolean> = signal(false);
 
   private translationService = inject(TranslationService);
 
@@ -32,10 +32,13 @@ export class Hero implements OnInit {
 
   constructor() {
     this.initializeMatrixTexts();
+    afterNextRender(() => {
+      this.startTypewriting();
+    });
   }
 
   ngOnInit(): void {
-    this.startTypewriting();
+    // Component initialization logic can go here if needed
   }
 
   private initializeMatrixTexts(): void {
@@ -80,11 +83,11 @@ export class Hero implements OnInit {
       clearTimeout(this.typingTimer);
       this.typingTimer = null;
     }
-    this.isTyping = false;
+    this.isTyping.set(false);
   }
 
   private startTypewriting(): void {
-    this.isTyping = true;
+    this.isTyping.set(true);
     this.displayedText.set('');
 
     let currentIndex = 0;
@@ -96,7 +99,7 @@ export class Hero implements OnInit {
         currentIndex++;
         this.typingTimer = setTimeout(typeNextCharacter, typingSpeed);
       } else {
-        this.isTyping = false;
+        this.isTyping.set(false);
         this.typingTimer = null;
       }
     };

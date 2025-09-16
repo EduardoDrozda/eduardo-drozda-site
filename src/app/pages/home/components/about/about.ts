@@ -23,6 +23,15 @@ export class About implements OnInit {
   quoteSignal = this.translationService.translateSignal('about.quote');
   quoteAuthorSignal = this.translationService.translateSignal('about.quoteAuthor');
 
+  // Code snippet translations
+  codeNameSignal = this.translationService.translateSignal('about.codeSnippet.name');
+  codeExperienceSignal = this.translationService.translateSignal('about.codeSnippet.experience');
+  codeSpecializationSignal = this.translationService.translateSignal('about.codeSnippet.specialization');
+  codePassionSignal = this.translationService.translateSignal('about.codeSnippet.passion');
+  codeMissionSignal = this.translationService.translateSignal('about.codeSnippet.mission');
+  codeCoffeeSignal = this.translationService.translateSignal('about.codeSnippet.coffeeConsumption');
+  codeBugsSignal = this.translationService.translateSignal('about.codeSnippet.bugsFixed');
+
   ngOnInit(): void {
     // Component initialization
   }

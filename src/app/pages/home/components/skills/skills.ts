@@ -9,7 +9,7 @@ import { Skill } from '@core/models/skill.model';
   templateUrl: './skills.html',
   styleUrl: './skills.scss'
 })
-export class Skills implements OnInit, AfterViewInit {
+export class Skills implements AfterViewInit {
   animatedCards: Set<number> = new Set();
 
   // Inject service
@@ -62,7 +62,7 @@ export class Skills implements OnInit, AfterViewInit {
 
   @ViewChild('skillsGrid', { static: false }) skillsGrid!: ElementRef;
 
-  ngOnInit(): void {
+  constructor() {
     effect(() => {
       this.skillsData();
     });

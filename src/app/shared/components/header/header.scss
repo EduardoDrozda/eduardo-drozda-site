@@ -136,7 +136,7 @@
   }
 
   &__mobile-menu {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     transition: all 0.3s ease;
     overflow: hidden;
 
@@ -145,7 +145,7 @@
     }
 
     &--visible {
-      max-height: 24rem;
+      max-height: 25rem;
     }
 
     @media (min-width: 768px) {
@@ -177,6 +177,15 @@
     &--active {
       color: var(--cyber-blue);
     }
+  }
+
+  &__mobile-language {
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0, 255, 65, 0.2);
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

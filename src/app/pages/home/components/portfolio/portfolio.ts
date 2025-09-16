@@ -13,15 +13,12 @@ export class Portfolio implements OnInit {
   // Inject service
   private translationService = inject(TranslationService);
 
-  // Signal references - initialized in ngOnInit
-  titleSignal!: any;
-  comingSoonSignal!: any;
-  subtitleSignal!: any;
+  // Signal references - initialized in constructor
+  titleSignal = this.translationService.translateSignal('portfolio.title');
+  comingSoonSignal = this.translationService.translateSignal('portfolio.comingSoon');
+  subtitleSignal = this.translationService.translateSignal('portfolio.subtitle');
 
   ngOnInit(): void {
-    // Initialize signal references after service is available
-    this.titleSignal = this.translationService.translateSignal('portfolio.title');
-    this.comingSoonSignal = this.translationService.translateSignal('portfolio.comingSoon');
-    this.subtitleSignal = this.translationService.translateSignal('portfolio.subtitle');
+    // Component initialization logic can go here if needed
   }
 }
