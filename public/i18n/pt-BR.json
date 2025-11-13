@@ -58,8 +58,18 @@
   },
   "portfolio": {
     "title": "Portfólio",
-    "comingSoon": "Em Breve",
-    "subtitle": "Projetos incríveis estão chegando..."
+    "subtitle": "Alguns projetos que tive a oportunidade de construir.",
+    "viewProject": "Ver projeto",
+    "projects": {
+      "ffadasabrina": {
+        "title": "Jaque Rosa",
+        "description": "Landing page em WordPress desenvolvida para destacar a mentoria holística da Jaque Rosa, reforçando autoridade, depoimentos e conversão.",
+        "desktopAlt": "Visualização da versão desktop do site Jaque Rosa"
+      }
+    },
+    "accessibility": {
+      "tagsLabel": "Tecnologias utilizadas no projeto"
+    }
   },
   "skills": {
     "title": "Minhas Skills",

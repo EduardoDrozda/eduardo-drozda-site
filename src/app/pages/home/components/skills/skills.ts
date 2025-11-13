@@ -35,7 +35,7 @@ export class Skills implements AfterViewInit {
         name: this.translationService.translateSignal('skills.frontend.name')(),
         category: 'frontend' as const,
         languages: ['HTML', 'Javascript/TypeScript', 'CSS/SASS'],
-        frameworks: ['Angular', 'React', 'Next'],
+        frameworks: ['Angular', 'React', 'Next', 'WordPress'],
         icon: 'assets/icons/html5.svg',
         description: this.translationService.translateSignal('skills.frontend.description')()
       },
@@ -53,7 +53,7 @@ export class Skills implements AfterViewInit {
         name: this.translationService.translateSignal('skills.mobile.name')(),
         category: 'mobile' as const,
         languages: ['Javascript/TypeScript'],
-        frameworks: ['React Native', 'Ionic'],
+        frameworks: ['React Native', 'Ionic', 'Electron'],
         icon: 'assets/icons/mobile.svg',
         description: this.translationService.translateSignal('skills.mobile.description')()
       }

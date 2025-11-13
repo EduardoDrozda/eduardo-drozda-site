@@ -14,23 +14,61 @@
         {{ titleSignal() }}
       </h2>
       <div class="portfolio__divider animate-neon-pulse" aria-hidden="true"></div>
+      <p class="portfolio__subtitle">
+        {{ subtitleSignal() }}
+      </p>
     </header>
 
-    <!-- Conteúdo Centralizado -->
-    <div class="portfolio__content">
-      <div class="portfolio__coming-soon">
-        <div class="portfolio__coming-soon-text">
-          <span class="portfolio__text-main">{{ comingSoonSignal() }}</span>
-          <div class="portfolio__text-subtitle">
-            {{ subtitleSignal() }}
-          </div>
+    <!-- Lista de projetos -->
+    <div class="portfolio__grid" role="list">
+      <article
+        class="portfolio-card"
+        *ngFor="let project of projects"
+        role="listitem"
+      >
+        <div class="portfolio-card__preview">
+          <img
+            class="portfolio-card__image"
+            [src]="project.desktopImage"
+            [alt]="project.desktopAltSignal()"
+            loading="lazy"
+            width="1280"
+            height="720"
+          />
         </div>
 
-        <!-- Ícone decorativo -->
-        <div class="portfolio__icon">
-          <i class="fas fa-rocket" aria-hidden="true"></i>
+        <div class="portfolio-card__body">
+          <h3 class="portfolio-card__title">
+            {{ project.titleSignal() }}
+          </h3>
+          <p class="portfolio-card__description">
+            {{ project.descriptionSignal() }}
+          </p>
+
+          <ul
+            class="portfolio-card__tags"
+            [attr.aria-label]="tagsLabelSignal()"
+          >
+            <li
+              class="portfolio-card__tag"
+              *ngFor="let tech of project.techs"
+            >
+              {{ tech }}
+            </li>
+          </ul>
         </div>
-      </div>
+
+        <footer class="portfolio-card__footer">
+          <a
+            class="portfolio-card__link"
+            [href]="project.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ viewProjectSignal() }}
+          </a>
+        </footer>
+      </article>
     </div>
   </div>
 </section>

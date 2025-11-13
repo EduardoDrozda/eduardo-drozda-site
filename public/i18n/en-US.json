@@ -58,8 +58,18 @@
   },
   "portfolio": {
     "title": "Portfolio",
-    "comingSoon": "Coming Soon",
-    "subtitle": "Amazing projects are coming..."
+    "subtitle": "A selection of projects I've had the chance to build.",
+    "viewProject": "View project",
+    "projects": {
+      "ffadasabrina": {
+        "title": "Jaque Rosa",
+        "description": "WordPress landing page created to highlight Jaque Rosa's holistic mentorship, combining authority, testimonials, and conversion-focused storytelling.",
+        "desktopAlt": "Desktop view of the Jaque Rosa website"
+      }
+    },
+    "accessibility": {
+      "tagsLabel": "Technologies used in the project"
+    }
   },
   "skills": {
     "title": "My Skills",
