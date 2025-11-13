@@ -1,245 +1,188 @@
-# Site Portfólio Eduardo Drozda
+# Eduardo Drozda Portfolio Website
 
-Um site de portfólio moderno e responsivo desenvolvido com Angular, inspirado no design cyberpunk/terminal com tema escuro e elementos neon.
+A modern, responsive portfolio site built with Angular. The visual language embraces a cyberpunk/terminal aesthetic featuring a dark theme, neon accents, and polished micro-interactions.
 
-## 🚀 Características
+## 🚀 Highlights
 
-- **Design Cyberpunk**: Interface com tema escuro, cores neon e efeitos de terminal
-- **Responsivo**: Funciona perfeitamente em todos os dispositivos
-- **Navegação Suave**: Scroll suave entre seções com offset para header fixo
-- **Animações**: Efeitos de matrix rain, typewriting, neon pulse e bounce
-- **Menu Mobile**: Hamburger menu responsivo com animações
-- **Download CV**: Botão funcional para download do currículo
-- **SEO Friendly**: Estrutura semântica e acessível
+- **Cyberpunk UI** – Dark theme, neon colors, terminal-inspired details
+- **Fully Responsive** – Optimized for mobile, tablet, and desktop
+- **Smooth Navigation** – Scroll behavior with offset for the fixed header
+- **Immersive Animations** – Matrix rain, typewriting, neon pulse, bounce, and more
+- **Mobile Menu** – Animated hamburger navigation
+- **Downloadable Resume** – Button wired to the hosted PDF
+- **SEO-Friendly** – Semantic structure with accessibility in mind
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 src/app/
-├── core/                    # Funcionalidades principais
-│   ├── models/             # Interfaces (Skill, PersonalInfo, ContactInfo)
-│   └── services/           # Serviços (DataService, NavigationService)
+├── core/                    # Core functionality
+│   ├── models/              # Interfaces (Skill, PersonalInfo, ContactInfo)
+│   └── services/            # Services (DataService, NavigationService)
 ├── pages/
-│   └── home/               # Página inicial
-│       ├── components/     # Componentes da página home
-│       │   ├── hero/        # Seção principal com typewriting
-│       │   ├── about/       # Sobre mim com foto e código
-│       │   ├── skills/      # Habilidades técnicas com chips
-│       │   └── contact/     # Formulário de contato
-│       └── enums/           # Enumerações (SectionEnum)
-└── shared/                 # Componentes compartilhados
+│   └── home/                # Landing page
+│       ├── components/      # Home page sections
+│       │   ├── hero/        # Hero with typewriting effect
+│       │   ├── about/       # About section with photo and code snippet
+│       │   ├── skills/      # Skills grid with chips
+│       │   └── contact/     # Contact information & form
+│       └── enums/           # Enumerations (SectionEnum)
+└── shared/                  # Shared components
     └── components/
-        └── header/         # Cabeçalho com navegação e menu mobile
+        └── header/          # Header navigation and mobile menu
 ```
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tech Stack
 
-- **Angular 20** - Framework principal
-- **TypeScript** - Linguagem de programação
-- **SCSS** - Pré-processador CSS com variáveis customizadas
-- **Font Awesome** - Ícones
-- **Google Fonts** - Tipografia (Source Code Pro, Inter)
+- **Angular 20** – Front-end framework
+- **TypeScript** – Application language
+- **SCSS** – Styling with custom variables and mixins
+- **Font Awesome** – Iconography
+- **Google Fonts** – Typography (Source Code Pro, Inter)
 
 ## 🎨 Design System
 
-### Cores
-- **Matrix Green**: `#00ff41` - Cor principal neon
-- **Cyber Blue**: `#00d4ff` - Cor secundária
-- **Matrix Dark**: `#0a0a0a` - Fundo escuro
-- **Code Background**: `#1a1a1a` - Fundo dos cards
+### Colors
+- **Matrix Green** – `#00ff41`
+- **Cyber Blue** – `#00d4ff`
+- **Matrix Dark** – `#0a0a0a`
+- **Code Background** – `#1a1a1a`
 
-### Tipografia
-- **Fonte Principal**: Source Code Pro (monospace)
-- **Fonte Secundária**: Inter (sans-serif)
+### Typography
+- **Primary Font** – Source Code Pro (monospace)
+- **Secondary Font** – Inter (sans-serif)
 
-### Efeitos
-- **Neon Pulse**: Animação de brilho para elementos neon
-- **Matrix Rain**: Efeito de chuva de código na hero
-- **Typewriting**: Animação de digitação no título
-- **Bounce**: Animação de salto no scroll down
+### Motion & Effects
+- **Neon Pulse** – Glow animation for accent elements
+- **Matrix Rain** – Animated background in the hero
+- **Typewriting** – Intro title animation
+- **Bounce** – Scroll-down indicator animation
 
-## 📦 Instalação
+## 📦 Getting Started
 
-1. Clone o repositório:
-```bash
-git clone <url-do-repositorio>
-cd eduardo-drozda-site
-```
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd eduardo-drozda-site
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm start
+   ```
+4. Open `http://localhost:4200` in the browser.
 
-2. Instale as dependências:
-```bash
-npm install
-```
+## 🎯 Key Features
 
-3. Execute o projeto:
-```bash
-npm start
-```
+### Hero
+- Typewriting headline (“SOFTWARE ENGINEER”)
+- Matrix rain highlighting technologies
+- Action buttons (GitHub, LinkedIn, Download CV)
+- Scroll-down cue with animation
 
-4. Acesse `http://localhost:4200` no seu navegador
+### About
+- Responsive layout with reordered content on mobile
+- Professional photo with hover effects
+- Creative JavaScript snippet about the author
+- Highlighted stats (years of experience, lines of code)
+- Inspiring quote
 
-## 🎯 Funcionalidades Principais
-
-### Hero Section
-- **Typewriting Animation**: Título "ENGENHEIRO DE SOFTWARE" com efeito de digitação
-- **Matrix Rain**: Efeito de chuva de código com tecnologias
-- **Botões de Ação**: GitHub, LinkedIn e Download CV
-- **Scroll Down**: Indicador animado para próxima seção
-
-### About Section
-- **Layout Responsivo**: Ordem dos elementos ajustada para mobile
-- **Foto Profissional**: Imagem com hover effects
-- **Código Criativo**: Snippet JavaScript estilizado
-- **Estatísticas**: Anos de experiência e métricas
-- **Quote**: Citação inspiradora
-
-### Skills Section
-- **Chips de Tecnologia**: Linguagens e frameworks organizados por categoria
-- **Categorias**: Front-end, Back-end e Mobile
-- **Animações**: Cards com efeitos de entrada
-- **Terminal Stats**: Estatísticas em formato terminal
+### Skills
+- Technology chips grouped by category
+- Categories: Front-end, Back-end, Mobile
+- Animated cards on scroll
+- “Terminal” style stats panel
 
 ### Header
-- **Navegação Suave**: Scroll smooth entre seções
-- **Menu Mobile**: Hamburger menu responsivo
-- **Detecção de Seção**: Destaque da seção ativa
-- **Logo Animado**: Efeito hover no logo
+- Smooth-scrolling navigation with active section detection
+- Animated hamburger menu for mobile
+- Hover animation on the logotype
 
-## 📱 Responsividade
+## 📱 Responsiveness
 
-O site é totalmente responsivo com breakpoints:
-- **Mobile**: até 767px
-- **Tablet**: 768px - 1023px  
-- **Desktop**: 1024px+
+Breakpoints:
+- **Mobile** – up to 767px
+- **Tablet** – 768px to 1023px  
+- **Desktop** – 1024px and above
 
-### Ajustes Mobile
-- Menu hamburger com animações
-- Ordem dos elementos ajustada na seção About
-- Cards de skills empilhados verticalmente
-- Scroll down centralizado
+Mobile tweaks include the hamburger menu, stacked skill cards, reordered About content, and centered scroll-down indicator.
 
-## 🔧 Personalização
+## 🔧 Customization
 
-### Modificando Conteúdo
+### Updating Content
 
-1. **Informações Pessoais**: Edite `src/app/core/services/data.service.ts`
-   - Nome, título, descrição
-   - Experiência profissional
-   - Informações de contato
+1. **Personal Info** – Edit `src/app/core/services/data.service.ts`  
+   Name, title, bio, experience, contact data
 
-2. **Habilidades**: Modifique o array de skills no mesmo arquivo
-   - Linguagens por categoria
-   - Frameworks e ferramentas
-   - Descrições das competências
+2. **Skills** – Update the skills array in the same file  
+   Categories, technologies, descriptions
 
-3. **Imagens**: Substitua arquivos em `public/images/`
-   - `me.jpeg` - Foto profissional
-   - `github.png`, `linkedin.png`, `file.png` - Ícones dos botões
+3. **Assets** – Replace images in `public/images/`  
+   - `me.jpeg` – Profile photo  
+   - `github.png`, `linkedin.png`, `file.png` – Action button icons
 
-### Customizando Estilos
+### Styling Tweaks
 
-1. **Cores**: Modifique as variáveis CSS em `src/styles.scss`
-2. **Animações**: Ajuste durações e efeitos nos arquivos SCSS
-3. **Layout**: Modifique grid e flexbox nos componentes
+1. **Colors** – Adjust CSS variables in `src/styles.scss`
+2. **Animations** – Tune durations and keyframes inside SCSS files
+3. **Layout** – Modify grid/flex configurations per component
 
-## 📄 Arquivos Estáticos
+## 📄 Static Assets
 
-- **Currículo**: `public/files/Curriculo Eduardo Fullstack - PT.pdf`
-- **Ícones**: `public/images/` (GitHub, LinkedIn, Download)
-- **SVGs**: `public/svgs/` (Ícones das skills)
+- **Resume** – `public/files/Curriculo Eduardo Fullstack - PT.pdf`
+- **Icons** – `public/images/`
+- **SVGs** – `public/svgs/`
 
-## 🔍 SEO e Otimizações
+## 🔍 SEO & Optimizations
 
-O projeto inclui otimizações completas de SEO:
+- Optimized meta tags (title, description, Open Graph, Twitter Cards, canonical)
+- Structured data with Schema.org (Person, Breadcrumb, Occupation, Skills, JSON-LD)
+- Performance tuning: lazy image loading, critical resource preload, DNS prefetch, compression, minification, optional service worker
+- Accessibility: alternative text, ARIA labels/roles, heading hierarchy, keyboard navigation, color contrast
+- Analytics: Google Analytics 4 integration, custom events, performance and conversion reports
 
-### **Meta Tags Otimizadas**
-- ✅ Title e description otimizados
-- ✅ Open Graph para redes sociais
-- ✅ Twitter Cards
-- ✅ Meta tags para dispositivos móveis
-- ✅ Canonical URLs
+## 🚀 Deployment
 
-### **Dados Estruturados**
-- ✅ Schema.org Person markup
-- ✅ Breadcrumb navigation
-- ✅ Occupation e skills markup
-- ✅ JSON-LD structured data
+1. Build for production:
+   ```bash
+   npm run build
+   ```
+2. Deploy the output from `dist/eduardo-drozda-site/` to your hosting provider.
 
-### **Performance**
-- ✅ Lazy loading de imagens
-- ✅ Preload de recursos críticos
-- ✅ DNS prefetch para domínios externos
-- ✅ Compressão e minificação
-- ✅ Service Worker (opcional)
+### Post-Deployment Checklist
 
-### **Acessibilidade**
-- ✅ Alt texts em todas as imagens
-- ✅ ARIA labels e roles
-- ✅ Hierarquia de headings correta
-- ✅ Navegação por teclado
-- ✅ Contraste de cores adequado
+1. **Google Search Console** – Add and verify the property, submit the sitemap.
+2. **Google Analytics** – Configure GA4 and update `GA_TRACKING_ID` in `GoogleAnalyticsService`.
+3. **SEO Verification** – Run Lighthouse/PageSpeed Insights, test structured data (Rich Results Test), validate accessibility (axe-core).
 
-### **Analytics**
-- ✅ Google Analytics 4 integrado
-- ✅ Tracking de eventos personalizados
-- ✅ Monitoramento de performance
-- ✅ Relatórios de conversão
+## 🎮 Interactions
 
-## 🚀 Deploy
+- Hover effects across interactive elements
+- Smooth scrolling between sections
+- Animated mobile navigation
+- Direct CV download
+- External links opening in new tabs
 
-Para fazer o deploy:
+## 📞 Contact
 
-1. Gere o build de produção:
-```bash
-npm run build
-```
+- **Email** – contato@eduardodrozda.com
+- **LinkedIn** – [Eduardo Drozda](https://linkedin.com/in/eduardodrozda)
+- **GitHub** – [eduardodrozda](https://github.com/eduardodrozda)
 
-2. Os arquivos estarão em `dist/eduardo-drozda-site/`
+## 📄 License
 
-3. Faça o upload para seu servidor de hospedagem
+This project is the property of Eduardo Drozda.
 
-### **Configuração Pós-Deploy**
+## 🤝 Contributing
 
-1. **Google Search Console**:
-   - Adicione o site ao Google Search Console
-   - Verifique a propriedade usando o arquivo HTML ou meta tag
-   - Envie o sitemap.xml
-
-2. **Google Analytics**:
-   - Configure o GA4 com seu ID de tracking
-   - Atualize o `GA_TRACKING_ID` no `GoogleAnalyticsService`
-
-3. **Verificação de SEO**:
-   - Use ferramentas como Lighthouse, PageSpeed Insights
-   - Teste a estrutura de dados com Google Rich Results Test
-   - Verifique acessibilidade com axe-core
-
-## 🎮 Interações
-
-- **Hover Effects**: Todos os elementos interativos têm efeitos hover
-- **Scroll Smooth**: Navegação suave entre seções
-- **Menu Mobile**: Animação do hamburger e transições
-- **Download CV**: Download automático do currículo
-- **Links Externos**: GitHub e LinkedIn abrem em nova aba
-
-## 📞 Contato
-
-- **Email**: contato@eduardodrozda.com
-- **LinkedIn**: [Eduardo Drozda](https://linkedin.com/in/eduardodrozda)
-- **GitHub**: [eduardodrozda](https://github.com/eduardodrozda)
-
-## 📄 Licença
-
-Este projeto é propriedade de Eduardo Drozda.
-
-## 🤝 Contribuição
-
-Para contribuir com o projeto:
-1. Faça um fork do repositório
-2. Crie uma branch para sua feature
-3. Faça commit das mudanças
-4. Abra um Pull Request
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a pull request
 
 ---
 
-**Desenvolvido com ❤️ por Eduardo Drozda**
+**Built with ❤️ by Eduardo Drozda**
