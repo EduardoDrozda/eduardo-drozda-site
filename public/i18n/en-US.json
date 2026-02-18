@@ -65,6 +65,11 @@
         "title": "Jaque Rosa",
         "description": "WordPress landing page created to highlight Jaque Rosa's holistic mentorship, combining authority, testimonials, and conversion-focused storytelling.",
         "desktopAlt": "Desktop view of the Jaque Rosa website"
+      },
+      "recrutaSimples": {
+        "title": "Recruta Simples",
+        "description": "On behalf of Scalare, we developed a WhatsApp chat integrated into the platform so recruiters can manage their selection processes, with reminder sends, template delivery, and WhatsApp Business integration.",
+        "desktopAlt": "Recruta Simples website view"
       }
     },
     "accessibility": {

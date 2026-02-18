@@ -38,6 +38,15 @@ export class Portfolio implements OnInit {
       desktopAltSignal: this.translationService.translateSignal('portfolio.projects.ffadasabrina.desktopAlt'),
       techs: ['WordPress', 'PHP', 'CSS', 'jQuery'],
       url: 'https://ffadasabrina.com.br/'
+    },
+    {
+      id: 'recruta-simples',
+      titleSignal: this.translationService.translateSignal('portfolio.projects.recrutaSimples.title'),
+      descriptionSignal: this.translationService.translateSignal('portfolio.projects.recrutaSimples.description'),
+      desktopImage: '/images/projects/recruta-simples.png',
+      desktopAltSignal: this.translationService.translateSignal('portfolio.projects.recrutaSimples.desktopAlt'),
+      techs: ['NestJS', "Typescript", "NodeJS", "React"],
+      url: 'https://www.recrutasimples.com.br/'
     }
   ];
 
